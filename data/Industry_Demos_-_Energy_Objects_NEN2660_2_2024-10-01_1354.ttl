@@ -1,0 +1,2139 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dsa: <http://w3id.org/dsa/> .
+@prefix otl: <http://www.laces.tech/publication/ns/semmtech/live/laces/schema/otl-manager/> .
+@prefix ldoc: <http://www.laces.tech/publication/ns/semmtech/live/laces/schema/document-extractions/> .
+@prefix lkos: <http://www.laces.tech/publication/ns/semmtech/live/laces/schema/kos/> .
+@prefix lspec: <http://www.laces.tech/publication/ns/semmtech/live/laces/schema/specifications/> .
+@prefix ls: <http://www.laces.tech/publication/ns/semmtech/live/laces/schema/shapes/> .
+@prefix lbm: <http://www.laces.tech/publication/ns/semmtech/live/laces/schema/blueprint-manager/> .
+
+<https://w3id.org/nen2660/def#Event> a owl:Class;
+  skos:prefLabel "event"@en, "gebeurtenis"@nl .
+
+<https://w3id.org/nen2660/def#Matter> a owl:Class;
+  skos:prefLabel "materie"@nl, "matter"@en .
+
+<https://w3id.org/nen2660/def#RealObject> a owl:Class;
+  skos:prefLabel "physical object"@en, "fysiek object"@nl .
+
+<https://w3id.org/nen2660/def#State> a owl:Class;
+  skos:prefLabel "state"@en, "toestand"@nl .
+
+<https://w3id.org/nen2660/def#GeometricEntity> a owl:Class;
+  skos:prefLabel "Geometric entity"@en, "geometrische entiteit"@nl .
+
+<https://w3id.org/nen2660/def#Activity> a owl:Class;
+  skos:prefLabel "activity"@en, "activiteit"@nl .
+
+<https://w3id.org/nen2660/def#InformationObject> a owl:Class;
+  skos:prefLabel "informatieobject"@nl, "information object"@en .
+
+<https://w3id.org/nen2660/def#hasPart> a owl:ObjectProperty;
+  skos:prefLabel "has part"@en, "heeft onderdeel"@nl .
+
+<https://w3id.org/nen2660/def#EnumerationType> a owl:Class;
+  skos:prefLabel "enumeratietype"@nl, "enumeration type"@en .
+
+<https://w3id.org/nen2660/def#SpatialRegion> a owl:Class;
+  skos:prefLabel "Spatial region"@en, "Ruimtelijk gebied"@nl .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/795112f0-3015-3ecc-9f20-a68309dcbc7d>
+  a owl:Class;
+  rdfs:subClassOf <https://w3id.org/nen2660/def#Activity>, [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#transforms>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/1e4a8be1-2427-3c9c-8e25-61ce3edc6e7b>
+    ];
+  skos:prefLabel "Task" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/1e4a8be1-2427-3c9c-8e25-61ce3edc6e7b>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/f9ee2d43-614e-3eff-9574-f179acbc3ac9>,
+    [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#executes>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/956208b8-6780-381c-bf8f-acca108efbbd>
+    ];
+  skos:prefLabel "Back-up protection system";
+  skos:notation "1.2" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/9904adee-d0bd-3764-b8d9-bd107bff4361>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/d64abbc5-50a2-3ef1-8964-92a04bba0066>,
+    [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      owl:minCardinality 0
+    ];
+  skos:prefLabel "Electronic powerswitch" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/d64abbc5-50a2-3ef1-8964-92a04bba0066>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/af098e38-720a-3886-83d8-d0ed680d2080>,
+    [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/f03b959e-b010-3d99-ad93-06b9e66e3d60>
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      owl:minCardinality 0
+    ];
+  skos:prefLabel "Electric controlling object";
+  skos:related <http://hub.laces.tech/semmtech/cases/cim/f8ec3f57-1b1a-3529-abc3-82f10d18ba17> .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>
+  a owl:ObjectProperty;
+  rdfs:range rdfs:Resource;
+  skos:prefLabel "color" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/d1736b83-4847-3904-9889-47bb2c73d23d>
+  a owl:Class;
+  rdfs:subClassOf <https://w3id.org/nen2660/def#SpatialRegion>;
+  skos:prefLabel "Construction entity" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/90ef5d7e-082f-3f91-a145-020d4a89d053>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/d64abbc5-50a2-3ef1-8964-92a04bba0066>,
+    [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      owl:minCardinality 0;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b6bea4b-2d9b-39f5-aeb9-8614a1a1d191>
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      owl:minCardinality 0
+    ];
+  skos:altLabel "Leistungsschalter"@de, "disjuncteur"@fr;
+  skos:prefLabel "Circuit breaker"@en;
+  skos:related <http://hub.laces.tech/semmtech/cases/cim/97dd5dba-29d2-36a9-b079-512e82dcc2e0>,
+    <http://www.nen2767-4.nl/bouwdeel/detail/5.html>;
+  skos:definition "A circuit breaker is..."@en .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b6bea4b-2d9b-39f5-aeb9-8614a1a1d191>
+  a sh:NodeShape, owl:Class;
+  rdfs:subClassOf <https://w3id.org/nen2660/def#EnumerationType>;
+  skos:prefLabel "Cable materials";
+  owl:oneOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b6bea4b-2d9b-39f5-aeb9-8614a1a1d191-list-0>;
+  sh:in <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b6bea4b-2d9b-39f5-aeb9-8614a1a1d191-list-0> .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>
+  a owl:ObjectProperty;
+  rdfs:range rdfs:Resource;
+  skos:altLabel "Materiaal"@nl;
+  skos:prefLabel "Material"@en .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/a8fcb8aa-d4e7-3c8b-8693-8914ad18b75f>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c98023aa-e552-3b9e-93eb-283d4a6622ac>;
+  skos:prefLabel "Manage interface" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c98023aa-e552-3b9e-93eb-283d4a6622ac>
+  a owl:Class;
+  rdfs:subClassOf <https://w3id.org/nen2660/def#Activity>;
+  skos:prefLabel "Activity" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6288cecd-0d58-3eea-a05f-2c569f5fc81f>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/235adcd8-04f0-309f-90b1-32210135cc20>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b6bea4b-2d9b-39f5-aeb9-8614a1a1d191>
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+      sh:minCount 0
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/235adcd8-04f0-309f-90b1-32210135cc20>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/90ef5d7e-082f-3f91-a145-020d4a89d053>,
+    [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      owl:minCardinality 0;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b6bea4b-2d9b-39f5-aeb9-8614a1a1d191>
+    ];
+  skos:prefLabel "Bus coupler circuit-breaker" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/48d41e29-7d6b-4bfc-afa2-b839dcf3c62b>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/18ca12eb-edd0-3a5e-bd02-12a97f4a6539>;
+  skos:prefLabel "Substation A" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/18ca12eb-edd0-3a5e-bd02-12a97f4a6539>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/dc31b686-0892-3c39-bcb8-475220dad779>,
+    [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/90ef5d7e-082f-3f91-a145-020d4a89d053>
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/a0ee09ed-1cd0-3959-9b33-37ee3340f94b>
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/5f7acf79-4948-31cd-bf4e-409da3b69c60>
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/a6c2c248-e46c-371d-9ac1-4a193e904d0a>
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/21838529-29d1-35ff-9bc2-88158d204c87>
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/9904adee-d0bd-3764-b8d9-bd107bff4361>
+    ];
+  skos:prefLabel "Substation generic" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/8266c5cd-bd63-3870-8557-05d9764aa65b>
+  a owl:Class;
+  rdfs:subClassOf <https://w3id.org/nen2660/def#RealObject>;
+  skos:prefLabel "Technical system" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/852fe0b5-19ca-3d50-857b-5913f01f4e32>
+  a <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b6bea4b-2d9b-39f5-aeb9-8614a1a1d191>;
+  skos:prefLabel "aluminium";
+  skos:definition "" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/15977a8b-2895-3113-96cf-6a7bc86f0f7d>
+  a rdf:Property;
+  rdfs:range "http://www.w3.org/2001/XMLSchema#decimal"^^xsd:anyURI;
+  skos:prefLabel "Dimension" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/f1864100-fc3d-3efd-916d-9404f70c8210>
+  a sh:NodeShape;
+  sh:property [
+      sh:path rdf:value;
+      sh:datatype xsd:decimal;
+      sh:maxCount 1;
+      sh:minCount 1
+    ], [
+      sh:path <http://schema.org/unitCode>;
+      sh:maxCount 1;
+      sh:minCount 1;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e00d5b6b-8ad7-36e5-aa86-f542920bc914>
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e00d5b6b-8ad7-36e5-aa86-f542920bc914>
+  a <http://qudt.org/schema/qudt/Unit>;
+  skos:prefLabel "Ohm" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/5d3522da-abfa-3c75-94f1-f473670cfd50-Shape>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/5d3522da-abfa-3c75-94f1-f473670cfd50>;
+  sh:property [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/cf718f31-7ce0-386f-82bf-0325696c8a72>
+        ];
+      sh:qualifiedMinCount 0
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/isFulfillerOf>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/73734d75-17d6-329e-be04-a8e0e8f8fe36>
+        ];
+      sh:qualifiedMinCount "0"^^xsd:nonNegativeInteger
+    ], [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/dbe929a1-6567-306d-9893-6fa5aeadd91e>
+        ];
+      sh:qualifiedMinCount 0
+    ], [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c919eefa-dc74-3bfd-a84c-532ff440bd3b>
+        ];
+      sh:qualifiedMinCount 0
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/cf718f31-7ce0-386f-82bf-0325696c8a72>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/Function>,
+    [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/956208b8-6780-381c-bf8f-acca108efbbd>
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/isFulfillerOf>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c719e0a2-f0cb-3c50-a182-1e43084c8fe8>
+    ];
+  skos:prefLabel "Protect transmission" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/dbe929a1-6567-306d-9893-6fa5aeadd91e>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/Function>;
+  skos:prefLabel "Change current" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/73734d75-17d6-329e-be04-a8e0e8f8fe36>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/Objective>;
+  skos:prefLabel "Control transmission process" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c919eefa-dc74-3bfd-a84c-532ff440bd3b>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/Function>,
+    [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/10e4f267-daba-3265-98a9-2f193696cb62>
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/isFulfillerOf>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e523faa1-053b-37cd-86e7-965e43f26791>
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6aca77b8-72e9-3bfc-81e1-dd6ec3cae5ec>
+    ];
+  skos:prefLabel "Operate transmission process" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/5d3522da-abfa-3c75-94f1-f473670cfd50>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/Function>,
+    [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/dbe929a1-6567-306d-9893-6fa5aeadd91e>
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c919eefa-dc74-3bfd-a84c-532ff440bd3b>
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/cf718f31-7ce0-386f-82bf-0325696c8a72>
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/isFulfillerOf>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/73734d75-17d6-329e-be04-a8e0e8f8fe36>
+    ];
+  skos:prefLabel "Transmit electrical power between offshore  grid and Onshore  grid" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/af098e38-720a-3886-83d8-d0ed680d2080>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/b6544b7c-8e23-35a1-9c7b-d57b8582cc1c>,
+    [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      owl:minCardinality 0
+    ];
+  skos:prefLabel "Component system" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/f03b959e-b010-3d99-ad93-06b9e66e3d60>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/f9ee2d43-614e-3eff-9574-f179acbc3ac9>,
+    [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      owl:minCardinality 0
+    ];
+  skos:prefLabel "Earthing arrangement" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/cee8afa75846a7fab7def0353783a2ad>
+  a owl:AnnotationProperty;
+  rdfs:range xsd:string;
+  skos:prefLabel "Project phase" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/358dfe38-55a6-38fc-84d1-3d046a62d210>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <http://schema.org/unitCode>;
+      sh:maxCount 1;
+      sh:minCount 1;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/edb34625-c332-35bb-afd6-ec667830d58c>
+    ], [
+      sh:path rdf:value;
+      sh:datatype xsd:decimal;
+      sh:maxCount 1;
+      sh:minCount 1
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/edb34625-c332-35bb-afd6-ec667830d58c>
+  a <http://qudt.org/schema/qudt/Unit>;
+  skos:prefLabel "Kilometer" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/dfe6076e1d429c24edcbb2686bb39567>
+  a owl:AnnotationProperty;
+  rdfs:range xsd:string;
+  skos:prefLabel "Colour" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b9b13b8-84d1-35af-b4a0-a520031d2ca6>
+  a rdf:Property;
+  rdfs:range "http://www.w3.org/2001/XMLSchema#string"^^xsd:anyURI;
+  skos:prefLabel "kleur" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/5f7acf79-4948-31cd-bf4e-409da3b69c60>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/63bf502f-bce4-3db5-9a7d-9fcacd0bd003>,
+    [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/815e4f59-94e2-395a-a111-442226124d6e>
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasInterior>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/0330f9d1-040d-31ae-8e29-8d7c28ab78a1>
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/26cc57bc-8ca6-36db-b547-48420e010b70>
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/883e15f6-07bf-3d26-946e-cb7b05fdc56f>;
+      owl:minCardinality 0
+    ];
+  skos:prefLabel "AC -> DC convertor" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/63bf502f-bce4-3db5-9a7d-9fcacd0bd003>
+  a owl:Class;
+  rdfs:subClassOf <http://www.laces-platform.tech/semmtech/ns/semmtech/private/live/semmtech/library/iec-60050/5de4fca5d48e5a420bfa32f8>,
+    <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/8266c5cd-bd63-3870-8557-05d9764aa65b>,
+    [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#executes>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/dbe929a1-6567-306d-9893-6fa5aeadd91e>
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/883e15f6-07bf-3d26-946e-cb7b05fdc56f>;
+      owl:minCardinality 0
+    ];
+  skos:prefLabel "Convertor" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/883e15f6-07bf-3d26-946e-cb7b05fdc56f>
+  a owl:ObjectProperty;
+  rdfs:subPropertyOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c390a72a-69c5-3201-962e-2f8ee5280a08>;
+  rdfs:range <https://w3id.org/nen2660/def#QuantityValue>;
+  skos:prefLabel "Potential" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/26cc57bc-8ca6-36db-b547-48420e010b70>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/8d7d8eb5-32b5-3f3b-965e-5698ec2a885a>,
+    [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/71b6399c-a9ff-3b04-8cbe-fb01c8a1f398>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/36a0d8ee-d81f-31d9-a49b-647e2138cb32>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/2bcd1ad4-542f-3793-a21b-411e8945c0bc>
+    ];
+  skos:prefLabel "Onshore station connector" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/0330f9d1-040d-31ae-8e29-8d7c28ab78a1>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/7dc4e14e-7b7f-35d2-84e0-4ca6e2ef64f0>;
+  skos:prefLabel "Convertor housing" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/815e4f59-94e2-395a-a111-442226124d6e>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/8d7d8eb5-32b5-3f3b-965e-5698ec2a885a>,
+    [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/71b6399c-a9ff-3b04-8cbe-fb01c8a1f398>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/36a0d8ee-d81f-31d9-a49b-647e2138cb32>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/900d5f53-0cb8-3e76-8b83-57b3ddb134e5>
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      owl:minCardinality 0
+    ];
+  skos:prefLabel "Offshore platform connector" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/7ea442f9-ccd3-34fd-bda1-68fe9f4ba346>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/Objective>;
+  skos:prefLabel "Effectively use  data and analytical methods to accommodate current and future market needs " .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/Objective>
+  a owl:Class;
+  rdfs:subClassOf <https://w3id.org/nen2660/def#State>;
+  skos:prefLabel "doel"@nl, "objective"@en .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/d5580707-98e0-3a9b-a36e-345b4c55f6a2>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/970b3152-a097-3662-a9d3-0443ef0e28ee>;
+  skos:prefLabel "Storage space" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/970b3152-a097-3662-a9d3-0443ef0e28ee>
+  a owl:Class;
+  rdfs:subClassOf <https://w3id.org/nen2660/def#SpatialRegion>;
+  skos:prefLabel "Construction space" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6a9ecf63-dbaf-3d65-bb52-2cbdce12078a>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/795112f0-3015-3ecc-9f20-a68309dcbc7d>;
+  skos:prefLabel "Report" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/f9ee2d43-614e-3eff-9574-f179acbc3ac9>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/b6544b7c-8e23-35a1-9c7b-d57b8582cc1c>,
+    [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      owl:minCardinality 0
+    ];
+  skos:prefLabel "Protection system" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b6bea4b-2d9b-39f5-aeb9-8614a1a1d191-list-1>
+  a rdf:List;
+  rdf:first <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/852fe0b5-19ca-3d50-857b-5913f01f4e32>;
+  rdf:rest <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b6bea4b-2d9b-39f5-aeb9-8614a1a1d191-list-2> .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b6bea4b-2d9b-39f5-aeb9-8614a1a1d191-list-2>
+  a rdf:List;
+  rdf:first <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ae0618a2-3508-3339-91cf-e71bce098de8>;
+  rdf:rest rdf:nil .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/b31aaee2-9414-336c-bd2d-3a3a406818ad>
+  a sh:NodeShape;
+  sh:property [
+      sh:path rdf:value;
+      sh:datatype xsd:decimal;
+      sh:maxCount 1;
+      sh:minCount 1
+    ], [
+      sh:path <http://schema.org/unitCode>;
+      sh:maxCount 1;
+      sh:minCount 1;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/edb34625-c332-35bb-afd6-ec667830d58c>
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/b4a68a43-10de-3d9b-a463-2f52b8508520>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/d64abbc5-50a2-3ef1-8964-92a04bba0066>,
+    [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      owl:minCardinality 0
+    ];
+  skos:prefLabel "EMS SCADA system" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/2bb708d3-e303-36c3-8d74-9d4b3b12cda5>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/4cc6225d-0cbe-34b3-a646-c9149f4ddce7>;
+  skos:prefLabel "Verification process" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/4cc6225d-0cbe-34b3-a646-c9149f4ddce7>
+  a owl:Class;
+  rdfs:subClassOf <https://w3id.org/nen2660/def#Activity>, [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#transforms>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/dee5db41-bf24-31ea-a35a-d725b1e3241f>
+    ];
+  skos:prefLabel "Process" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/aa97885d-c9dd-34e5-9e97-31cd4334052d>
+  a rdf:Property;
+  rdfs:range "http://www.w3.org/2001/XMLSchema#decimal"^^xsd:anyURI;
+  skos:prefLabel "hoogte" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6aca77b8-72e9-3bfc-81e1-dd6ec3cae5ec>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c919eefa-dc74-3bfd-a84c-532ff440bd3b>;
+  skos:prefLabel "Operate AC transmission process" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c1cb7a9c-9c79-3c30-ac1e-cd4557294052>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <http://schema.org/unitCode>;
+      sh:maxCount 1;
+      sh:minCount 1;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/3d2e5f72-a04a-327e-9831-18fa2c8ae0e6>
+    ], [
+      sh:path rdf:value;
+      sh:datatype xsd:decimal;
+      sh:maxCount 1;
+      sh:minCount 1
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/3d2e5f72-a04a-327e-9831-18fa2c8ae0e6>
+  a <http://qudt.org/schema/qudt/Unit>;
+  skos:prefLabel "Kilovolt" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/af5a2730-8fb6-3cac-a414-bd482aea0c79>
+  a rdf:Property;
+  rdfs:range "http://www.w3.org/2001/XMLSchema#decimal"^^xsd:anyURI;
+  skos:prefLabel "voltage" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e6844afb-98af-381b-82c0-ed1c65f9325f>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/90ef5d7e-082f-3f91-a145-020d4a89d053>,
+    [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      owl:minCardinality 0;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b6bea4b-2d9b-39f5-aeb9-8614a1a1d191>
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      owl:minCardinality 0
+    ];
+  skos:prefLabel "Switched busbar circuit-breaker" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/4eec64e8-5cce-47cf-b10a-b0ebfbc33587>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/8266c5cd-bd63-3870-8557-05d9764aa65b>;
+  skos:prefLabel "Pylon" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/18ca12eb-edd0-3a5e-bd02-12a97f4a6539-Shape>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/18ca12eb-edd0-3a5e-bd02-12a97f4a6539>;
+  sh:property [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/a6c2c248-e46c-371d-9ac1-4a193e904d0a>
+        ];
+      sh:qualifiedMinCount 0
+    ], [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/21838529-29d1-35ff-9bc2-88158d204c87>
+        ];
+      sh:qualifiedMinCount 0
+    ], [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/9904adee-d0bd-3764-b8d9-bd107bff4361>
+        ];
+      sh:qualifiedMinCount 0
+    ], [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/90ef5d7e-082f-3f91-a145-020d4a89d053>
+        ];
+      sh:qualifiedMinCount 1
+    ], [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/5f7acf79-4948-31cd-bf4e-409da3b69c60>
+        ];
+      sh:qualifiedMinCount 0
+    ], [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/a0ee09ed-1cd0-3959-9b33-37ee3340f94b>
+        ];
+      sh:qualifiedMinCount 0
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/21838529-29d1-35ff-9bc2-88158d204c87>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/dc31b686-0892-3c39-bcb8-475220dad779>;
+  skos:prefLabel "Emergency power generator system" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/a0ee09ed-1cd0-3959-9b33-37ee3340f94b>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/f9ee2d43-614e-3eff-9574-f179acbc3ac9>,
+    [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#isDescribedBy>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e1ce45ab-11eb-32b3-95a5-bfaabf323e17>
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      owl:minCardinality 0
+    ];
+  skos:prefLabel "Fire protection system" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/a6c2c248-e46c-371d-9ac1-4a193e904d0a>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/f9ee2d43-614e-3eff-9574-f179acbc3ac9>,
+    [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      owl:minCardinality 0
+    ];
+  skos:prefLabel "Access control system" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/Function>
+  a owl:Class;
+  rdfs:subClassOf <https://w3id.org/nen2660/def#Activity>;
+  skos:prefLabel "functie"@nl, "function"@en .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6bb0b01b-046d-3137-9ec9-bcea23e031db>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/dee5db41-bf24-31ea-a35a-d725b1e3241f>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ce79c862-7a64-33d8-931f-8c95e3f5dbb9>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <https://w3id.org/nen2660/def#QuantityValue>;
+      sh:node <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/358dfe38-55a6-38fc-84d1-3d046a62d210>
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b6bea4b-2d9b-39f5-aeb9-8614a1a1d191>
+    ], [
+      sh:path <https://w3id.org/nen2660/def#executes>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c919eefa-dc74-3bfd-a84c-532ff440bd3b>
+        ];
+      sh:qualifiedMinCount "0"^^xsd:nonNegativeInteger
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+      sh:minCount 0
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6e2adfb7-0062-347c-877a-4f00180ea488>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <https://w3id.org/nen2660/def#QuantityValue>;
+      sh:node <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/91829d8c-9086-3b3b-82be-25e63ba13c88>
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/91829d8c-9086-3b3b-82be-25e63ba13c88>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <http://schema.org/unitCode>;
+      sh:maxCount 1;
+      sh:minCount 1;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/edb34625-c332-35bb-afd6-ec667830d58c>
+    ], [
+      sh:path rdf:value;
+      sh:datatype xsd:decimal;
+      sh:maxCount 1;
+      sh:minCount 1
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6e2adfb7-0062-347c-877a-4f00180ea488>
+  a owl:ObjectProperty;
+  rdfs:subPropertyOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/15977a8b-2895-3113-96cf-6a7bc86f0f7d>;
+  rdfs:range <https://w3id.org/nen2660/def#QuantityValue>;
+  skos:prefLabel "Length";
+  <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/cee8afa75846a7fab7def0353783a2ad>
+    "Contract", "Build" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ce79c862-7a64-33d8-931f-8c95e3f5dbb9>
+  a owl:ObjectProperty;
+  rdfs:subPropertyOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/15977a8b-2895-3113-96cf-6a7bc86f0f7d>;
+  rdfs:range <https://w3id.org/nen2660/def#QuantityValue>;
+  skos:prefLabel "Diameter" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/dee5db41-bf24-31ea-a35a-d725b1e3241f>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/dc31b686-0892-3c39-bcb8-475220dad779>,
+    [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ce79c862-7a64-33d8-931f-8c95e3f5dbb9>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      owl:minCardinality 0;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b6bea4b-2d9b-39f5-aeb9-8614a1a1d191>
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6e2adfb7-0062-347c-877a-4f00180ea488>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#executes>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c919eefa-dc74-3bfd-a84c-532ff440bd3b>
+    ];
+  owl:equivalentClass <http://www.laces-platform.tech/semmtech/ns/semmtech/private/live/semmtech/library/iec-60050/5de4fd83d48e5a420bfa3322>,
+    <http://www.nen2767-4.nl/bouwdeel/detail/1062>;
+  skos:prefLabel "Cable system";
+  <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/shallBeCompliantWith>
+    <http://hub.laces.tech/ns/semmtech/private/live/demo-energy/library/test-demo-energy/3232c0d2-0abf-38e6-b3b8-20c686048a1f>,
+    <http://hub.laces.tech/ns/semmtech/private/live/demo-energy/library/test-demo-energy/e0f59767-ec99-34e2-9ed5-644ce928aa9e> .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/File>
+  a owl:Class;
+  rdfs:subClassOf <https://w3id.org/nen2660/def#InformationObject>;
+  skos:prefLabel "file"@en, "file"@nl .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/8c8f2f19-f533-3158-8e31-27a920dae2e0>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/d64abbc5-50a2-3ef1-8964-92a04bba0066>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+      sh:minCount 0
+    ], [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/f03b959e-b010-3d99-ad93-06b9e66e3d60>
+        ];
+      sh:qualifiedMinCount 0
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/8d7d8eb5-32b5-3f3b-965e-5698ec2a885a>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/8266c5cd-bd63-3870-8557-05d9764aa65b>,
+    [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/71b6399c-a9ff-3b04-8cbe-fb01c8a1f398>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/36a0d8ee-d81f-31d9-a49b-647e2138cb32>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#executes>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/5d3522da-abfa-3c75-94f1-f473670cfd50>
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      owl:minCardinality 0
+    ];
+  skos:prefLabel "Connector" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/2bcd1ad4-542f-3793-a21b-411e8945c0bc>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/dee5db41-bf24-31ea-a35a-d725b1e3241f>,
+    [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ce79c862-7a64-33d8-931f-8c95e3f5dbb9>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6e2adfb7-0062-347c-877a-4f00180ea488>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      owl:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/852fe0b5-19ca-3d50-857b-5913f01f4e32>
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#executes>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6aca77b8-72e9-3bfc-81e1-dd6ec3cae5ec>
+    ];
+  skos:prefLabel "AC Cable System" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/71b6399c-a9ff-3b04-8cbe-fb01c8a1f398>
+  a owl:ObjectProperty;
+  rdfs:subPropertyOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c390a72a-69c5-3201-962e-2f8ee5280a08>;
+  rdfs:range <https://w3id.org/nen2660/def#QuantityValue>;
+  skos:prefLabel "Resistance" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/36a0d8ee-d81f-31d9-a49b-647e2138cb32>
+  a owl:ObjectProperty;
+  rdfs:subPropertyOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/a2c69cf6-76d0-3f80-bb9a-776f26e6dd28>;
+  rdfs:range <https://w3id.org/nen2660/def#QuantityValue>;
+  skos:prefLabel "Material cost" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/febccfd5-896e-3cd7-ac51-26e2cab8e0fe-Shape>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/febccfd5-896e-3cd7-ac51-26e2cab8e0fe>;
+  sh:property [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/18ca12eb-edd0-3a5e-bd02-12a97f4a6539>
+        ];
+      sh:qualifiedMinCount 0
+    ], [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/8266c5cd-bd63-3870-8557-05d9764aa65b>
+        ];
+      sh:qualifiedMinCount 0
+    ], [
+      sh:path <https://w3id.org/nen2660/def#executes>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/77f5c4fd-0e13-3b55-af57-25b2cb256d0c>
+        ];
+      sh:qualifiedMinCount "0"^^xsd:nonNegativeInteger
+    ], [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/0ce5f6b3-c261-37a7-9101-f5ef29877d78>
+        ];
+      sh:qualifiedMinCount 0
+    ], [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/b4a68a43-10de-3d9b-a463-2f52b8508520>
+        ];
+      sh:qualifiedMinCount 0
+    ], [
+      sh:path <https://w3id.org/nen2660/def#executes>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c919eefa-dc74-3bfd-a84c-532ff440bd3b>
+        ];
+      sh:qualifiedMinCount "0"^^xsd:nonNegativeInteger
+    ], [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/1e4a8be1-2427-3c9c-8e25-61ce3edc6e7b>
+        ];
+      sh:qualifiedMinCount 0
+    ], [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e16464c7-bb94-35a8-aa4c-94c5b962da01>
+        ];
+      sh:qualifiedMinCount 0
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/77f5c4fd-0e13-3b55-af57-25b2cb256d0c>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/4cc6225d-0cbe-34b3-a646-c9149f4ddce7>;
+  skos:prefLabel "Implementation process" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/0ce5f6b3-c261-37a7-9101-f5ef29877d78>
+  a owl:Class;
+  rdfs:subClassOf <https://w3id.org/nen2660/def#RealObject>, [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/4319a4b9-8eac-3c53-a78d-a335a8e831d4>
+    ];
+  skos:prefLabel "Inline cable termination";
+  <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/shallBeCompliantWith>
+    <http://hub.laces.tech/ns/semmtech/private/live/demo-energy/library/test-demo-energy/0c85b485-dacb-3b18-b169-be950a0a58c2> .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e16464c7-bb94-35a8-aa4c-94c5b962da01>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/dc31b686-0892-3c39-bcb8-475220dad779>,
+    [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/4eec64e8-5cce-47cf-b10a-b0ebfbc33587>
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/d64abbc5-50a2-3ef1-8964-92a04bba0066>
+    ];
+  skos:prefLabel "Overhead line system ";
+  <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/shallBeCompliantWith>
+    <http://hub.laces.tech/ns/semmtech/private/live/demo-energy/library/test-demo-energy/0c85b485-dacb-3b18-b169-be950a0a58c2> .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/febccfd5-896e-3cd7-ac51-26e2cab8e0fe>
+  a owl:Class;
+  rdfs:subClassOf <https://w3id.org/nen2660/def#RealObject>, [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e16464c7-bb94-35a8-aa4c-94c5b962da01>
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#executes>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/77f5c4fd-0e13-3b55-af57-25b2cb256d0c>
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#executes>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c919eefa-dc74-3bfd-a84c-532ff440bd3b>
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/1e4a8be1-2427-3c9c-8e25-61ce3edc6e7b>
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/8266c5cd-bd63-3870-8557-05d9764aa65b>
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/b4a68a43-10de-3d9b-a463-2f52b8508520>
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/18ca12eb-edd0-3a5e-bd02-12a97f4a6539>
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/0ce5f6b3-c261-37a7-9101-f5ef29877d78>
+    ];
+  skos:prefLabel "Grid system";
+  skos:notation "1";
+  <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/shallBeCompliantWith>
+    <http://hub.laces.tech/ns/semmtech/private/live/demo-energy/library/test-demo-energy/e1e246fc-5065-35a7-aa5c-eef4383731dd>,
+    <http://hub.laces.tech/ns/semmtech/private/live/demo-energy/library/test-demo-energy/c7d6f8d0-2cea-3c6b-8514-3e003c82c470> .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6bf3b1f4-7041-39a0-b05c-b41ad851fb51>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <http://schema.org/unitCode>;
+      sh:maxCount 1;
+      sh:minCount 1;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/edb34625-c332-35bb-afd6-ec667830d58c>
+    ], [
+      sh:path rdf:value;
+      sh:datatype xsd:decimal;
+      sh:maxCount 1;
+      sh:minCount 1
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/9b873353-2625-3f51-be85-baa0ef411dc4>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/90ef5d7e-082f-3f91-a145-020d4a89d053>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+      sh:minCount 0
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b6bea4b-2d9b-39f5-aeb9-8614a1a1d191>
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/dc31b686-0892-3c39-bcb8-475220dad779>
+  a owl:Class;
+  rdfs:subClassOf <https://w3id.org/nen2660/def#RealObject>;
+  skos:prefLabel "Power supply system" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/cf718f31-7ce0-386f-82bf-0325696c8a72-Shape>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/cf718f31-7ce0-386f-82bf-0325696c8a72>;
+  sh:property [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/956208b8-6780-381c-bf8f-acca108efbbd>
+        ];
+      sh:qualifiedMinCount 0
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/isFulfillerOf>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c719e0a2-f0cb-3c50-a182-1e43084c8fe8>
+        ];
+      sh:qualifiedMinCount "0"^^xsd:nonNegativeInteger
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c719e0a2-f0cb-3c50-a182-1e43084c8fe8>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/Objective>;
+  skos:prefLabel "Comply to all regulatory standards";
+  skos:definition "link toevoegen document" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/956208b8-6780-381c-bf8f-acca108efbbd>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/cf718f31-7ce0-386f-82bf-0325696c8a72>;
+  skos:prefLabel "Provide back-up protection" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c390a72a-69c5-3201-962e-2f8ee5280a08>
+  a rdf:Property;
+  skos:prefLabel "Electrical aspects" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/b6544b7c-8e23-35a1-9c7b-d57b8582cc1c>
+  a owl:Class;
+  rdfs:subClassOf <https://w3id.org/nen2660/def#RealObject>, [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#executes>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c7a782f1-b43f-3f2e-8d70-75b0166da529>
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      owl:minCardinality 0
+    ];
+  skos:altLabel "Component systeem", "Onderdeel systeem";
+  skos:prefLabel "Component system"@nl;
+  <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/dfe6076e1d429c24edcbb2686bb39567>
+    "black" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/18944e18-eb35-37d7-bb84-476ba36cdd8a>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <http://schema.org/unitCode>;
+      sh:maxCount 1;
+      sh:minCount 1;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e00d5b6b-8ad7-36e5-aa86-f542920bc914>
+    ], [
+      sh:path rdf:value;
+      sh:datatype xsd:decimal;
+      sh:maxCount 1;
+      sh:minCount 1
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/f6e3e078-dbd3-3af4-9772-117cb62444e1>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/f03b959e-b010-3d99-ad93-06b9e66e3d60>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+      sh:minCount 0
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/bd8f9dce-177d-3c14-af83-73118f13ca64>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <http://schema.org/unitCode>;
+      sh:maxCount 1;
+      sh:minCount 1;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/edb34625-c332-35bb-afd6-ec667830d58c>
+    ], [
+      sh:path rdf:value;
+      sh:datatype xsd:decimal;
+      sh:maxCount 1;
+      sh:minCount 1
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/2b79ef9e-d5b8-331f-83fb-a32973ed3e53>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/4cc6225d-0cbe-34b3-a646-c9149f4ddce7>;
+  skos:prefLabel "Integration process" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b6bea4b-2d9b-39f5-aeb9-8614a1a1d191-list-0>
+  a rdf:List;
+  rdf:first <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/5ff9c75f-8483-37b5-a4c0-1c92c27c5127>;
+  rdf:rest <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b6bea4b-2d9b-39f5-aeb9-8614a1a1d191-list-1> .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/5ff9c75f-8483-37b5-a4c0-1c92c27c5127>
+  a <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b6bea4b-2d9b-39f5-aeb9-8614a1a1d191>;
+  skos:prefLabel "gold";
+  skos:definition "" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/3ad24e46-1418-360b-8ea1-4662a300bd1d>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c98023aa-e552-3b9e-93eb-283d4a6622ac>,
+    [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#hasPart>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c98023aa-e552-3b9e-93eb-283d4a6622ac>
+    ];
+  skos:prefLabel "Manage risk" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/b27d5e32-5164-3b82-a008-78510b96714e>
+  a sh:NodeShape;
+  sh:property [
+      sh:path rdf:value;
+      sh:datatype xsd:decimal;
+      sh:maxCount 1;
+      sh:minCount 1
+    ], [
+      sh:path <http://schema.org/unitCode>;
+      sh:maxCount 1;
+      sh:minCount 1;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/58e20386-cd19-341b-b7ee-a38636185248>
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/58e20386-cd19-341b-b7ee-a38636185248>
+  a <http://qudt.org/schema/qudt/Unit>;
+  skos:prefLabel "meter" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/5df33f4f-4db2-3726-924b-f7bc68695e5c>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/4cc6225d-0cbe-34b3-a646-c9149f4ddce7>;
+  skos:prefLabel "Operation process" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c919eefa-dc74-3bfd-a84c-532ff440bd3b-Shape>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c919eefa-dc74-3bfd-a84c-532ff440bd3b>;
+  sh:property [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/10e4f267-daba-3265-98a9-2f193696cb62>
+        ];
+      sh:qualifiedMinCount 0
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/isFulfillerOf>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e523faa1-053b-37cd-86e7-965e43f26791>
+        ];
+      sh:qualifiedMinCount "0"^^xsd:nonNegativeInteger
+    ], [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6aca77b8-72e9-3bfc-81e1-dd6ec3cae5ec>
+        ];
+      sh:qualifiedMinCount 0
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/10e4f267-daba-3265-98a9-2f193696cb62>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c919eefa-dc74-3bfd-a84c-532ff440bd3b>;
+  skos:prefLabel "Operate DC transmission process" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e523faa1-053b-37cd-86e7-965e43f26791>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/Objective>;
+  skos:prefLabel "Effectively balance electricity supply and demand" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e43686a6-997b-314a-abe2-0d0c44aa8a33>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/26cc57bc-8ca6-36db-b547-48420e010b70>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/36a0d8ee-d81f-31d9-a49b-647e2138cb32>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <https://w3id.org/nen2660/def#QuantityValue>;
+      sh:node <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ed6fe846-cc20-3498-b50c-0352fa20ba6c>
+    ], [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/2bcd1ad4-542f-3793-a21b-411e8945c0bc>
+        ];
+      sh:qualifiedMinCount 0
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+      sh:minCount 0
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/71b6399c-a9ff-3b04-8cbe-fb01c8a1f398>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <https://w3id.org/nen2660/def#QuantityValue>;
+      sh:node <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/f1864100-fc3d-3efd-916d-9404f70c8210>
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ed6fe846-cc20-3498-b50c-0352fa20ba6c>
+  a sh:NodeShape;
+  sh:property [
+      sh:path rdf:value;
+      sh:datatype xsd:decimal;
+      sh:maxCount 1;
+      sh:minCount 1
+    ], [
+      sh:path <http://schema.org/unitCode>;
+      sh:maxCount 1;
+      sh:minCount 1;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/faad3fa5-e435-3827-81cd-aa939a08ebe0>
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/1a6f6ec6-5e20-32eb-9ca6-d8087f9e2db2>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/b4a68a43-10de-3d9b-a463-2f52b8508520>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+      sh:minCount 0
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/428b8d0c-3fbe-38ff-bf6d-75a5d6a5e598>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/90ef5d7e-082f-3f91-a145-020d4a89d053>,
+    [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      owl:minCardinality 0;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b6bea4b-2d9b-39f5-aeb9-8614a1a1d191>
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      owl:minCardinality 0
+    ];
+  skos:prefLabel "Feeder circuit-breaker" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/1a2bc6de-49dd-36ae-aa58-ce2377b86c47>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/2bcd1ad4-542f-3793-a21b-411e8945c0bc>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6e2adfb7-0062-347c-877a-4f00180ea488>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <https://w3id.org/nen2660/def#QuantityValue>;
+      sh:node <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c2695402-c6eb-3569-acd2-a51f23c72042>
+    ], [
+      sh:path <https://w3id.org/nen2660/def#executes>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6aca77b8-72e9-3bfc-81e1-dd6ec3cae5ec>
+        ];
+      sh:qualifiedMinCount "0"^^xsd:nonNegativeInteger
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/852fe0b5-19ca-3d50-857b-5913f01f4e32>
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ce79c862-7a64-33d8-931f-8c95e3f5dbb9>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <https://w3id.org/nen2660/def#QuantityValue>;
+      sh:node <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/8d399726-a645-35cd-bfb6-8b26409280fc>
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+      sh:minCount 0
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/8d399726-a645-35cd-bfb6-8b26409280fc>
+  a sh:NodeShape;
+  sh:property [
+      sh:path rdf:value;
+      sh:datatype xsd:decimal;
+      sh:maxCount 1;
+      sh:minCount 1
+    ], [
+      sh:path <http://schema.org/unitCode>;
+      sh:maxCount 1;
+      sh:minCount 1;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/edb34625-c332-35bb-afd6-ec667830d58c>
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c2695402-c6eb-3569-acd2-a51f23c72042>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <http://schema.org/unitCode>;
+      sh:maxCount 1;
+      sh:minCount 1;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/edb34625-c332-35bb-afd6-ec667830d58c>
+    ], [
+      sh:path rdf:value;
+      sh:datatype xsd:decimal;
+      sh:maxCount 1;
+      sh:minCount 1
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/b1a4c773-eda8-3b76-a27e-54a3e3ac8ad1>
+  a <http://qudt.org/schema/qudt/Unit>;
+  skos:prefLabel "Watt" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/4e427417-eac2-3e70-a4a4-6aea966ff16b>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/4cc6225d-0cbe-34b3-a646-c9149f4ddce7>;
+  skos:prefLabel "Transition process" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/795112f0-3015-3ecc-9f20-a68309dcbc7d-Shape>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/795112f0-3015-3ecc-9f20-a68309dcbc7d>;
+  sh:property [
+      sh:path <https://w3id.org/nen2660/def#transforms>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/1e4a8be1-2427-3c9c-8e25-61ce3edc6e7b>
+        ];
+      sh:qualifiedMinCount "0"^^xsd:nonNegativeInteger
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c320fcfb-ebcf-3994-ae49-3fab88480e7a>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/a0ee09ed-1cd0-3959-9b33-37ee3340f94b>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+      sh:minCount 0
+    ], [
+      sh:path <https://w3id.org/nen2660/def#isDescribedBy>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e1ce45ab-11eb-32b3-95a5-bfaabf323e17>
+        ];
+      sh:qualifiedMinCount "0"^^xsd:nonNegativeInteger
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e1ce45ab-11eb-32b3-95a5-bfaabf323e17>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/0acb9087-c3f8-3f10-8500-0c421802f6b9>;
+  skos:prefLabel "Safety  regulations" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/275a9400-60e4-4af0-aefb-64ac57907b70>
+  a rdf:Property;
+  rdfs:range "http://www.w3.org/2001/XMLSchema#decimal"^^xsd:anyURI;
+  skos:prefLabel "Rated Voltage" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/02dfa0eb-a0d6-3101-8748-f6df6efbaa59>
+  a rdf:Property;
+  rdfs:subPropertyOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/a2c69cf6-76d0-3f80-bb9a-776f26e6dd28>;
+  rdfs:range "http://www.w3.org/2001/XMLSchema#decimal"^^xsd:anyURI;
+  skos:prefLabel "Labour cost" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/Risk>
+  a owl:Class;
+  rdfs:subClassOf <https://w3id.org/nen2660/def#Activity>;
+  skos:prefLabel "risk"@en, "risico"@nl .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/19360a4f-58ff-3e9c-ab75-45d670a29d89>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/4cc6225d-0cbe-34b3-a646-c9149f4ddce7>;
+  skos:prefLabel "Requirements analysis process" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/132dbf51-5ee2-341b-a6e5-099b5f20887a>
+  a owl:Class;
+  rdfs:subClassOf <https://w3id.org/nen2660/def#Activity>;
+  skos:prefLabel "bouwen van billy boekenkast" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/dd442084-db52-30ec-b97a-7bded0f4b64e>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/9904adee-d0bd-3764-b8d9-bd107bff4361>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+      sh:minCount 0
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/Agent>
+  a owl:Class;
+  rdfs:subClassOf <https://w3id.org/nen2660/def#RealObject>;
+  skos:prefLabel "agent"@en, "actor"@nl .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/fd0c5a74-cd7a-3814-8af2-c2da44b7b95f>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/4cc6225d-0cbe-34b3-a646-c9149f4ddce7>;
+  skos:prefLabel "Stakeholder needs definition process" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/faad3fa5-e435-3827-81cd-aa939a08ebe0>
+  a <http://qudt.org/schema/qudt/Unit>;
+  skos:prefLabel "€" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e16464c7-bb94-35a8-aa4c-94c5b962da01-Shape>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e16464c7-bb94-35a8-aa4c-94c5b962da01>;
+  sh:property [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/4eec64e8-5cce-47cf-b10a-b0ebfbc33587>
+        ];
+      sh:qualifiedMinCount 0
+    ], [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/d64abbc5-50a2-3ef1-8964-92a04bba0066>
+        ];
+      sh:qualifiedMinCount 0
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ee0e94c7-b704-374c-98ff-de0603836cf5>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/900d5f53-0cb8-3e76-8b83-57b3ddb134e5>;
+  sh:property [
+      sh:path <https://w3id.org/nen2660/def#executes>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/10e4f267-daba-3265-98a9-2f193696cb62>
+        ];
+      sh:qualifiedMinCount "0"^^xsd:nonNegativeInteger
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ce79c862-7a64-33d8-931f-8c95e3f5dbb9>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <https://w3id.org/nen2660/def#QuantityValue>;
+      sh:node <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/bd8f9dce-177d-3c14-af83-73118f13ca64>
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+      sh:minCount 0
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/005bbcd7-8570-37b7-9e59-545dfcab8fa1>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <https://w3id.org/nen2660/def#QuantityValue>;
+      sh:node <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/044c4a90-6e3d-3fde-a801-ba86a3a5aeaf>
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6e2adfb7-0062-347c-877a-4f00180ea488>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <https://w3id.org/nen2660/def#QuantityValue>;
+      sh:node <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6bf3b1f4-7041-39a0-b05c-b41ad851fb51>
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ae0618a2-3508-3339-91cf-e71bce098de8>
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ae0618a2-3508-3339-91cf-e71bce098de8>
+  a <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b6bea4b-2d9b-39f5-aeb9-8614a1a1d191>;
+  skos:prefLabel "copper";
+  skos:definition "" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/044c4a90-6e3d-3fde-a801-ba86a3a5aeaf>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <http://schema.org/unitCode>;
+      sh:maxCount 1;
+      sh:minCount 1;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/58e20386-cd19-341b-b7ee-a38636185248>
+    ], [
+      sh:path rdf:value;
+      sh:datatype xsd:decimal;
+      sh:maxCount 1;
+      sh:minCount 1
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/005bbcd7-8570-37b7-9e59-545dfcab8fa1>
+  a owl:ObjectProperty;
+  rdfs:range <https://w3id.org/nen2660/def#QuantityValue>;
+  skos:prefLabel "height" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/900d5f53-0cb8-3e76-8b83-57b3ddb134e5>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/dee5db41-bf24-31ea-a35a-d725b1e3241f>,
+    [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ce79c862-7a64-33d8-931f-8c95e3f5dbb9>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#executes>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/10e4f267-daba-3265-98a9-2f193696cb62>
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/005bbcd7-8570-37b7-9e59-545dfcab8fa1>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      owl:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ae0618a2-3508-3339-91cf-e71bce098de8>
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6e2adfb7-0062-347c-877a-4f00180ea488>;
+      owl:minCardinality 0
+    ];
+  owl:equivalentClass <http://www.laces-platform.tech/semmtech/ns/semmtech/private/live/semmtech/library/iec-60050/5de4fd83d48e5a420bfa3322>;
+  skos:prefLabel "DC Cable System";
+  skos:notation "1.1" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ff9eaece-4e43-3e3f-9ef0-cc945028e769>
+  a rdf:Property;
+  rdfs:subPropertyOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c390a72a-69c5-3201-962e-2f8ee5280a08>;
+  skos:prefLabel "Conductance" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/5e82e35b-3249-3e08-b843-42c4a62ce84a>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/Risk>;
+  skos:prefLabel "Flooding" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/42ff5bae-a67b-38eb-81f3-0c15451812a6>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c49fc4cb-1873-3a0b-9908-d3bb7a386374>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ae0618a2-3508-3339-91cf-e71bce098de8>
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+      sh:minCount 0
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/005bbcd7-8570-37b7-9e59-545dfcab8fa1>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <https://w3id.org/nen2660/def#QuantityValue>;
+      sh:node <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/b27d5e32-5164-3b82-a008-78510b96714e>
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ce79c862-7a64-33d8-931f-8c95e3f5dbb9>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <https://w3id.org/nen2660/def#QuantityValue>;
+      sh:node <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/5a6b66e2-06ab-3faa-a03a-241070f76d83>
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6e2adfb7-0062-347c-877a-4f00180ea488>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <https://w3id.org/nen2660/def#QuantityValue>;
+      sh:node <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/7bc4f6da-9573-378a-a881-8a8581cd4c54>
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/5a6b66e2-06ab-3faa-a03a-241070f76d83>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <http://schema.org/unitCode>;
+      sh:maxCount 1;
+      sh:minCount 1;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/edb34625-c332-35bb-afd6-ec667830d58c>
+    ], [
+      sh:path rdf:value;
+      sh:datatype xsd:decimal;
+      sh:maxCount 1;
+      sh:minCount 1
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/7bc4f6da-9573-378a-a881-8a8581cd4c54>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <http://schema.org/unitCode>;
+      sh:maxCount 1;
+      sh:minCount 1;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/edb34625-c332-35bb-afd6-ec667830d58c>
+    ], [
+      sh:path rdf:value;
+      sh:datatype xsd:decimal;
+      sh:maxCount 1;
+      sh:minCount 1
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c49fc4cb-1873-3a0b-9908-d3bb7a386374>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ff679d2d-5211-3033-935a-7ab053331220>,
+    [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      owl:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ae0618a2-3508-3339-91cf-e71bce098de8>
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ce79c862-7a64-33d8-931f-8c95e3f5dbb9>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6e2adfb7-0062-347c-877a-4f00180ea488>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/005bbcd7-8570-37b7-9e59-545dfcab8fa1>;
+      owl:minCardinality 0
+    ];
+  skos:prefLabel "Pomp";
+  <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/shallBeCompliantWith>
+    <http://hub.laces.tech/ns/semmtech/private/live/demo-energy/library/test-demo-energy/c7d6f8d0-2cea-3c6b-8514-3e003c82c470> .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/fb62da96-5a04-3e14-a485-1b50f29666fa>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/d1736b83-4847-3904-9889-47bb2c73d23d>;
+  skos:prefLabel "Traffic facility" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/352fd500-da71-3b2b-9fcf-7d7d01414b7a>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/132dbf51-5ee2-341b-a6e5-099b5f20887a>;
+  skos:prefLabel "stap 1" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ff679d2d-5211-3033-935a-7ab053331220>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/900d5f53-0cb8-3e76-8b83-57b3ddb134e5>,
+    [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/005bbcd7-8570-37b7-9e59-545dfcab8fa1>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ce79c862-7a64-33d8-931f-8c95e3f5dbb9>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6e2adfb7-0062-347c-877a-4f00180ea488>;
+      owl:minCardinality 0
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      owl:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ae0618a2-3508-3339-91cf-e71bce098de8>
+    ];
+  skos:prefLabel "DC Cable System Heavy Duty" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/85ccf5a0-9983-388b-ba1a-e7836ed8601e>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/b6544b7c-8e23-35a1-9c7b-d57b8582cc1c>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+      sh:minCount 0
+    ], [
+      sh:path <https://w3id.org/nen2660/def#executes>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c7a782f1-b43f-3f2e-8d70-75b0166da529>
+        ];
+      sh:qualifiedMinCount "0"^^xsd:nonNegativeInteger
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c7a782f1-b43f-3f2e-8d70-75b0166da529>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/4cc6225d-0cbe-34b3-a646-c9149f4ddce7>;
+  skos:prefLabel "Architectural defintion process" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/0acb9087-c3f8-3f10-8500-0c421802f6b9>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/Document>;
+  skos:prefLabel "Law" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/862a857d-d10b-3bce-be4a-2de8be136b80>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/4cc6225d-0cbe-34b3-a646-c9149f4ddce7>;
+  skos:prefLabel "Validation process" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/d8540448-4c78-343d-b10b-01a464c3097b>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/970b3152-a097-3662-a9d3-0443ef0e28ee>;
+  skos:prefLabel "Space for human dwelling" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/4183fb98-ae0f-3a0e-a670-84c3803144ad>
+  a rdfs:Container;
+  rdfs:member <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/5f7acf79-4948-31cd-bf4e-409da3b69c60>,
+    <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/a0ee09ed-1cd0-3959-9b33-37ee3340f94b>;
+  skos:prefLabel "Outsourced systems" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/b7b5e7f1-f7c4-3614-b1d1-f51a4e17ef4e>
+  a owl:Class;
+  rdfs:subClassOf <https://w3id.org/nen2660/def#SpatialRegion>;
+  skos:prefLabel "Construction complex" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/3ad24e46-1418-360b-8ea1-4662a300bd1d-Shape>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/3ad24e46-1418-360b-8ea1-4662a300bd1d>;
+  sh:property [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c98023aa-e552-3b9e-93eb-283d4a6622ac>
+        ];
+      sh:qualifiedMinCount 0
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/7dc4e14e-7b7f-35d2-84e0-4ca6e2ef64f0>
+  a owl:Class;
+  rdfs:subClassOf <https://w3id.org/nen2660/def#GeometricEntity>;
+  skos:prefLabel "Transformation building" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/26516ae8-f147-3dc1-bd71-4dfa7ccc7a3e>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/970b3152-a097-3662-a9d3-0443ef0e28ee>;
+  skos:prefLabel "Space for human activity" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/25d33de4-fb8a-3abf-a115-07e0ae5ddea1>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/b7b5e7f1-f7c4-3614-b1d1-f51a4e17ef4e>;
+  skos:prefLabel "Electric power complex area" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/4319a4b9-8eac-3c53-a78d-a335a8e831d4>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/dc31b686-0892-3c39-bcb8-475220dad779>;
+  skos:prefLabel "Telecommunication system" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/25a65626-3dc0-3860-8bcf-c42c47e85695>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/1e4a8be1-2427-3c9c-8e25-61ce3edc6e7b>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+      sh:minCount 0
+    ], [
+      sh:path <https://w3id.org/nen2660/def#executes>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/956208b8-6780-381c-bf8f-acca108efbbd>
+        ];
+      sh:qualifiedMinCount "0"^^xsd:nonNegativeInteger
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/70bd82fe-b8f5-3bea-94c1-d64eb6ddbfd4>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/428b8d0c-3fbe-38ff-bf6d-75a5d6a5e598>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+      sh:minCount 0
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b6bea4b-2d9b-39f5-aeb9-8614a1a1d191>
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/35b566a2-f19e-3e60-9df5-cfb9762ad9e6-Shape>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/35b566a2-f19e-3e60-9df5-cfb9762ad9e6>;
+  sh:property [
+      sh:path <https://w3id.org/nen2660/def#contains>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/18ca12eb-edd0-3a5e-bd02-12a97f4a6539>
+        ];
+      sh:qualifiedMinCount "0"^^xsd:nonNegativeInteger
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/35b566a2-f19e-3e60-9df5-cfb9762ad9e6>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/25d33de4-fb8a-3abf-a115-07e0ae5ddea1>,
+    [ a owl:Restriction;
+      owl:onProperty <https://w3id.org/nen2660/def#contains>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/18ca12eb-edd0-3a5e-bd02-12a97f4a6539>
+    ];
+  skos:prefLabel "Substation complex" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/076ce660-04e6-3271-94b8-14db5cb0c12a>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <http://schema.org/unitCode>;
+      sh:maxCount 1;
+      sh:minCount 1;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/faad3fa5-e435-3827-81cd-aa939a08ebe0>
+    ], [
+      sh:path rdf:value;
+      sh:datatype xsd:decimal;
+      sh:maxCount 1;
+      sh:minCount 1
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/61809e33-2f88-3b36-a71d-1f126bfe5fd4>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/d0225f41-96e2-3dd1-9fcd-ea0d33b7a3a5>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b6bea4b-2d9b-39f5-aeb9-8614a1a1d191>
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+      sh:minCount 0
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/d0225f41-96e2-3dd1-9fcd-ea0d33b7a3a5>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/90ef5d7e-082f-3f91-a145-020d4a89d053>,
+    [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      owl:minCardinality 0;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b6bea4b-2d9b-39f5-aeb9-8614a1a1d191>
+    ], [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      owl:minCardinality 0
+    ];
+  skos:prefLabel "Transformer circuit-breaker" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c538a785-3749-3a19-8b13-d1409c2d981b>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <http://schema.org/unitCode>;
+      sh:maxCount 1;
+      sh:minCount 1;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/edb34625-c332-35bb-afd6-ec667830d58c>
+    ], [
+      sh:path rdf:value;
+      sh:datatype xsd:decimal;
+      sh:maxCount 1;
+      sh:minCount 1
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/deeafc55-592e-343a-9526-f823b1447919>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/f9ee2d43-614e-3eff-9574-f179acbc3ac9>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+      sh:minCount 0
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/65c882a5-4230-33b6-992a-52dc958fdd8f>
+  a sh:NodeShape;
+  sh:property [
+      sh:path rdf:value;
+      sh:datatype xsd:decimal;
+      sh:maxCount 1;
+      sh:minCount 1
+    ], [
+      sh:path <http://schema.org/unitCode>;
+      sh:maxCount 1;
+      sh:minCount 1;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e00d5b6b-8ad7-36e5-aa86-f542920bc914>
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/4cc6225d-0cbe-34b3-a646-c9149f4ddce7-Shape>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/4cc6225d-0cbe-34b3-a646-c9149f4ddce7>;
+  sh:property [
+      sh:path <https://w3id.org/nen2660/def#transforms>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/dee5db41-bf24-31ea-a35a-d725b1e3241f>
+        ];
+      sh:qualifiedMinCount "0"^^xsd:nonNegativeInteger
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/0c3ff42b-8172-3925-bcae-3887f9ad4f52>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/795112f0-3015-3ecc-9f20-a68309dcbc7d>;
+  skos:prefLabel "Plan" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/9b9efa40-fbfa-39b2-8fae-60a4c2d86f26>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/970b3152-a097-3662-a9d3-0443ef0e28ee>;
+  skos:prefLabel "Space for technical systems" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/afeb27dd-70e4-3f50-bcb4-f4f31f2cf177>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/Agent>,
+    [ a owl:Restriction;
+      owl:onProperty <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/isResponsibleFor>;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger;
+      owl:onClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/a8fcb8aa-d4e7-3c8b-8693-8914ad18b75f>
+    ];
+  skos:prefLabel "External company" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/abadb9bc-5b26-3991-ad31-3bf5638a1265>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <http://schema.org/unitCode>;
+      sh:maxCount 1;
+      sh:minCount 1;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/faad3fa5-e435-3827-81cd-aa939a08ebe0>
+    ], [
+      sh:path rdf:value;
+      sh:datatype xsd:decimal;
+      sh:maxCount 1;
+      sh:minCount 1
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/057bd70d-f728-3456-86ee-2561f89204f8>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ff679d2d-5211-3033-935a-7ab053331220>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ae0618a2-3508-3339-91cf-e71bce098de8>
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ce79c862-7a64-33d8-931f-8c95e3f5dbb9>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <https://w3id.org/nen2660/def#QuantityValue>;
+      sh:node <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/b31aaee2-9414-336c-bd2d-3a3a406818ad>
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+      sh:minCount 0
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/005bbcd7-8570-37b7-9e59-545dfcab8fa1>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <https://w3id.org/nen2660/def#QuantityValue>;
+      sh:node <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/b6592088-8cd5-3c47-aca6-5dcd5b1aea48>
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6e2adfb7-0062-347c-877a-4f00180ea488>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <https://w3id.org/nen2660/def#QuantityValue>;
+      sh:node <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c538a785-3749-3a19-8b13-d1409c2d981b>
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/b6592088-8cd5-3c47-aca6-5dcd5b1aea48>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <http://schema.org/unitCode>;
+      sh:maxCount 1;
+      sh:minCount 1;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/58e20386-cd19-341b-b7ee-a38636185248>
+    ], [
+      sh:path rdf:value;
+      sh:datatype xsd:decimal;
+      sh:maxCount 1;
+      sh:minCount 1
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/4defd32e-85ec-371e-acd2-1077676d3def>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e6844afb-98af-381b-82c0-ed1c65f9325f>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+      sh:minCount 0
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/6b6bea4b-2d9b-39f5-aeb9-8614a1a1d191>
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/06d04e68-8c26-3731-b7fd-76e6cdfdc861>
+  a rdf:Property;
+  rdfs:subPropertyOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/15977a8b-2895-3113-96cf-6a7bc86f0f7d>;
+  rdfs:range "http://www.w3.org/2001/XMLSchema#decimal"^^xsd:anyURI;
+  skos:prefLabel "Width";
+  <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/cee8afa75846a7fab7def0353783a2ad>
+    "Design" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/afeb27dd-70e4-3f50-bcb4-f4f31f2cf177-Shape>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/afeb27dd-70e4-3f50-bcb4-f4f31f2cf177>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/isResponsibleFor>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/a8fcb8aa-d4e7-3c8b-8693-8914ad18b75f>
+        ];
+      sh:qualifiedMinCount "0"^^xsd:nonNegativeInteger
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/603601be-eb6c-3c3c-a6c7-3eb64bdf401f>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/5f7acf79-4948-31cd-bf4e-409da3b69c60>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/883e15f6-07bf-3d26-946e-cb7b05fdc56f>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <https://w3id.org/nen2660/def#QuantityValue>;
+      sh:node <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c1cb7a9c-9c79-3c30-ac1e-cd4557294052>
+    ], [
+      sh:path <https://w3id.org/nen2660/def#hasInterior>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/0330f9d1-040d-31ae-8e29-8d7c28ab78a1>
+        ];
+      sh:qualifiedMinCount "0"^^xsd:nonNegativeInteger
+    ], [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/815e4f59-94e2-395a-a111-442226124d6e>
+        ];
+      sh:qualifiedMinCount 0
+    ], [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/26cc57bc-8ca6-36db-b547-48420e010b70>
+        ];
+      sh:qualifiedMinCount 0
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/Document>
+  a owl:Class;
+  rdfs:subClassOf <https://w3id.org/nen2660/def#InformationObject>;
+  skos:prefLabel "document"@nl, "document"@en .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/2bb50161-908d-3ebc-bfc8-99c68f447554>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/Risk>;
+  skos:prefLabel "Delay" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/5e832a8a-fa56-3b48-b390-65fbff973169>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <http://schema.org/unitCode>;
+      sh:maxCount 1;
+      sh:minCount 1;
+      sh:hasValue <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/3d2e5f72-a04a-327e-9831-18fa2c8ae0e6>
+    ], [
+      sh:path rdf:value;
+      sh:datatype xsd:decimal;
+      sh:maxCount 1;
+      sh:minCount 1
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/>
+  a owl:Ontology;
+  skos:prefLabel "OTLmanager (schema)"@en, "Laces schemas"@en, "W3C Shapes Constraint Language (SHACL) Vocabulary"@en,
+    "Laces: Specifications (schema)", "Laces: Document extractions (schema)", "Laces: KOS (schema)",
+    "Industry Demos - Energy Objects NEN2660";
+  rdfs:comment "";
+  owl:imports <https://w3id.org/nen2660/def#>;
+  dcterms:date "2024-08-01182" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/7bb43f9f-3e8a-3944-a680-f94049aa6a03>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/815e4f59-94e2-395a-a111-442226124d6e>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+      sh:minCount 0
+    ], [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/900d5f53-0cb8-3e76-8b83-57b3ddb134e5>
+        ];
+      sh:qualifiedMinCount 0
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/36a0d8ee-d81f-31d9-a49b-647e2138cb32>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <https://w3id.org/nen2660/def#QuantityValue>;
+      sh:node <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/abadb9bc-5b26-3991-ad31-3bf5638a1265>
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/71b6399c-a9ff-3b04-8cbe-fb01c8a1f398>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <https://w3id.org/nen2660/def#QuantityValue>;
+      sh:node <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/65c882a5-4230-33b6-992a-52dc958fdd8f>
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/14de0ac3-4963-3257-bfeb-d3396f931caa>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/af098e38-720a-3886-83d8-d0ed680d2080>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+      sh:minCount 0
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/cb6b4a15-9ab1-3190-bda9-bf0e676f0b4a>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/d1736b83-4847-3904-9889-47bb2c73d23d>;
+  skos:prefLabel "Parking facility" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/ef2fd4f0-a671-3f13-9b17-3fc02dd55c07>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/63bf502f-bce4-3db5-9a7d-9fcacd0bd003>;
+  sh:property [
+      sh:path <https://w3id.org/nen2660/def#executes>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/dbe929a1-6567-306d-9893-6fa5aeadd91e>
+        ];
+      sh:qualifiedMinCount "0"^^xsd:nonNegativeInteger
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/883e15f6-07bf-3d26-946e-cb7b05fdc56f>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <https://w3id.org/nen2660/def#QuantityValue>;
+      sh:node <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/5e832a8a-fa56-3b48-b390-65fbff973169>
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/80e8ef2c-35a4-3993-9982-be30078dee77>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/d1736b83-4847-3904-9889-47bb2c73d23d>;
+  skos:prefLabel "Natural area" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/b410e792-4ab4-3671-8c18-6a360b6c3bec>
+  a rdf:Property;
+  rdfs:subPropertyOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c390a72a-69c5-3201-962e-2f8ee5280a08>;
+  skos:prefLabel "Currenct" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/24e1bdc2-f75e-3720-83c1-0ee55175dbab>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/795112f0-3015-3ecc-9f20-a68309dcbc7d>;
+  skos:prefLabel "Assist" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/b46fa887-02d6-336f-ad34-bc5d2901d9bb>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/a6c2c248-e46c-371d-9ac1-4a193e904d0a>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/e13896cf-a6d6-388e-929b-faa067243cb2>;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+      sh:minCount 0
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/c3f04837-9616-3953-a064-a5aa573f065d>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/Risk>;
+  skos:prefLabel "Death" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/8aca9d77-4e43-39f7-911b-a9425a68734b>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/dc31b686-0892-3c39-bcb8-475220dad779>;
+  skos:prefLabel "Offshore platform" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/723d3554-6f26-3f50-8827-4671e3c4ae50>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/8d7d8eb5-32b5-3f3b-965e-5698ec2a885a>;
+  sh:property [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/404a995e-83d4-30f8-8782-e572416c1c5a>;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+      sh:minCount 0
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/36a0d8ee-d81f-31d9-a49b-647e2138cb32>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <https://w3id.org/nen2660/def#QuantityValue>;
+      sh:node <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/076ce660-04e6-3271-94b8-14db5cb0c12a>
+    ], [
+      sh:path <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/71b6399c-a9ff-3b04-8cbe-fb01c8a1f398>;
+      sh:maxCount 1;
+      sh:minCount 0;
+      sh:class <https://w3id.org/nen2660/def#QuantityValue>;
+      sh:node <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/18944e18-eb35-37d7-bb84-476ba36cdd8a>
+    ], [
+      sh:path <https://w3id.org/nen2660/def#executes>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/5d3522da-abfa-3c75-94f1-f473670cfd50>
+        ];
+      sh:qualifiedMinCount "0"^^xsd:nonNegativeInteger
+    ] .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/69fdf0e0-3579-3467-81b4-a922874a5460>
+  a owl:Class;
+  rdfs:subClassOf <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/d1736b83-4847-3904-9889-47bb2c73d23d>;
+  skos:prefLabel "Processing facility" .
+
+<http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/0ce5f6b3-c261-37a7-9101-f5ef29877d78-Shape>
+  a sh:NodeShape;
+  sh:targetClass <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/0ce5f6b3-c261-37a7-9101-f5ef29877d78>;
+  sh:property [
+      sh:path <https://w3id.org/nen2660/def#hasPart>;
+      sh:qualifiedValueShape [
+          sh:class <http://hub.laces.tech/semmtech/consultancy/demonstrations/industries/energy/otl/industry-demos---energy-objects-nen2660/4319a4b9-8eac-3c53-a78d-a335a8e831d4>
+        ];
+      sh:qualifiedMinCount 0
+    ] .
