@@ -1,0 +1,41 @@
+Classes:
+- <https://test.org/dsp_groupf1/def#Floor1_B> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_F> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_F_LightingSystem> (No label)
+- <https://test.org/dsp_groupf1/def#SP904> (No label)
+- <https://test.org/dsp_groupf1/def#Floor1_F> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_G> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_E> (No label)
+- <https://test.org/dsp_groupf1/def#Floor2_B> (No label)
+- <https://test.org/dsp_groupf1/def#Floor1_A> (No label)
+- <https://test.org/dsp_groupf1/def#Floor3_B> (No label)
+- <https://test.org/dsp_groupf1/def#Floor1_E> (No label)
+- <https://test.org/dsp_groupf1/def#Floor2_F> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_A> (No label)
+- <https://test.org/dsp_groupf1/def#Object> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_B> (No label)
+- <https://test.org/dsp_groupf1/def#Floor2_E> (No label)
+- <https://test.org/dsp_groupf1/def#Floor2_A> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_C> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_D> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_G_LightingSystem> (No label)
+- <https://test.org/dsp_groupf1/def#Floor3_A> (No label)
+
+Object Properties:
+- <https://test.org/dsp_groupf1/def#hasPart> (label: No label, domain: <https://test.org/dsp_groupf1/def#SP_Building_G_LightingSystem>, <https://test.org/dsp_groupf1/def#SP_Building_F_LightingSystem>, range: <https://test.org/dsp_groupf1/def#Lightbulb>)
+
+Datatype Properties:
+- <https://test.org/dsp_groupf1/def#wattage> (label: No label, domain: <https://test.org/dsp_groupf1/def#Lightbulb>, range: xsd:decimal)
+- <https://test.org/dsp_groupf1/def#model> (label: No label, domain: <https://test.org/dsp_groupf1/def#Lightbulb>, range: xsd:string)
+
+Example Triples:
+- <https://test.org/dsp_groupf1/def#hasPart> rdfs:range <https://test.org/dsp_groupf1/def#Lightbulb>.
+- <https://test.org/dsp_groupf1/def#model> rdfs:range xsd:string.
+- <https://test.org/dsp_groupf1/def#SP904> rdfs:subClassOf <https://test.org/dsp_groupf1/def#Object>.
+- <https://test.org/dsp_groupf1/def#Lightbulb_building_F> <https://test.org/dsp_groupf1/def#wattage> "12.5"^^xsd:decimal.
+- <https://test.org/dsp_groupf1/def#Floor1_A> skos:prefLabel "Building A first floor".
+- <https://test.org/dsp_groupf1/def#SP_Building_E> skos:prefLabel "Building E".
+- <https://test.org/dsp_groupf1/def#Floor2_E> rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_E>.
+- <https://test.org/dsp_groupf1/def#Floor1_B> rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_B>.
+- <https://test.org/dsp_groupf1/def#Floor1_B> rdf:type owl:Class.
+- <https://test.org/dsp_groupf1/def#SP_Building_G> skos:prefLabel "Building G".

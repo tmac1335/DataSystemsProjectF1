@@ -16,8 +16,23 @@
             justify-content: center;
             height: 100vh;
         }
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        #response-container:hover {
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
         h1 {
             color: #333;
+            text-align: center;
+            margin-bottom: 20px;
         }
         form {
             margin-top: 20px;
@@ -54,7 +69,7 @@
         #response-container {
             margin-top: 30px;
             width: 80%;
-            max-width: 600px;
+            max-width: 800px;
             background-color: #fff;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -62,9 +77,22 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: auto;
             white-space: pre-wrap;
             word-wrap: break-word;
             color: #333;
+        }
+        code {
+            color: #d6336c;
+            font-family: Consolas, Monaco, 'Courier New', monospace;
+        }
+        #loading {
+            font-weight: bold;
         }
     </style>
     <script>
@@ -80,18 +108,81 @@
     </script>
 </head>
 <body>
-    <h1>Search Page</h1>
+    <h1>Natural Language to SPARQL</h1>
     <form method="post">
         {% csrf_token %}
-        <input type="text" name="query" placeholder="Enter your search query" required>
+        <input type="text" name="query" placeholder="Enter your query" required>
         <button type="submit">Search</button>
     </form>
     <div id="loading">Loading, please wait...</div>
     {% if response %}
         <div id="response-container">
             <h2>Response:</h2>
-            <pre>{{ response|safe }}</pre>
+            <pre><code>{{ response.result}}</code></pre>
         </div>
     {% endif %}
+    <textarea rows="10" cols="80" placeholder="Write your SPARQL query here, or select one of the queries above." style="height: 200px;"></textarea>
+    <button id="run-query" disabled>Run Query</button>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const responseContainer = document.getElementById("response-container");
+            const textArea = document.querySelector("textarea");
+            const runQueryButton = document.getElementById("run-query");
+
+            if (responseContainer) {
+                responseContainer.addEventListener("click", () => {
+                    const responseText = responseContainer.querySelector("code").innerText;
+                    textArea.value = responseText;
+                    runQueryButton.disabled = responseText.trim() === "";
+                });
+            }
+
+            textArea.addEventListener("input", () => {
+                runQueryButton.disabled = textArea.value.trim() === "";
+            });
+
+            runQueryButton.addEventListener("click", (event) => {
+                event.preventDefault();
+                const query = textArea.value.trim();
+                if (query) {
+                    fetch("http://127.0.0.1:5000/query", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ query }),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Handle the response data
+                        console.log(data);
+                        alert(JSON.stringify(data, null, 2)); // Print out the response
+                    })
+                    .catch(error => {
+                        console.error("Error:", error);
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
+<style>
+    #run-query {
+        background-color: #28a745;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    #run-query:disabled {
+        background-color: #6c757d;
+        cursor: not-allowed;
+    }
+    #run-query:hover:not(:disabled) {
+        background-color: #218838;
+    }
+</style>
