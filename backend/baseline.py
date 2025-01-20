@@ -10,14 +10,24 @@ organisation = os.getenv('ORGANISATION')
 client = OpenAI(organization=organisation, api_key=api_key)
 
 
-def construct_sparql_query(nl_query):
+def construct_sparql_query(user_query):
+
+    with open('../data/ontology_description.txt', 'r') as file:
+        ontology_description = file.read()
+    task = """
+        Task:
+        You are an assistant trained to generate SPARQL queries based on the given ontology and user prompts. Use the ontology description to understand the structure and generate accurate queries. Assume the ontology is loaded in a database.
+        only return the sparql query.
+        """
 
     prompt = f"""
-    Create a Sparql query from a natural language query:
-    "{nl_query}"
-    The Entity and Relationship types are given, coming from the linked database. Semantically match the entities and relationships in the query to the ones in the database also apply any filters necessary. Only output the given query.
-    - `Here is a list of entities and relationships in the database, so use those to find the closest related ones`: entitites: "{ENTITY_TYPES}", relationships: "{RELATIONSHIP_TYPES}
-    "
+    Ontology Description:
+    {ontology_description}
+
+    {task}
+
+    User Query:
+    {user_query}
     """
 
     response = client.chat.completions.create(
@@ -26,7 +36,7 @@ def construct_sparql_query(nl_query):
             {"role": "user", "content": prompt}
         ]
     )
-    
+
     choice_str = response.choices[0].message.content
     
     return choice_str
