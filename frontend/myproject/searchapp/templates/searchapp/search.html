@@ -11,13 +11,45 @@
             margin: 0;
             padding: 0;
             display: flex;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+        .left, .right {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .left {
+            border-right: 1px solid #ccc;
+            width: 100%;
+        }
+        .right {
+            display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+        }
+        textarea {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .code-block:hover {
+            background-color: #f0f0f0;
+            cursor: pointer;
         }
         h1 {
             color: #333;
+            text-align: center;
+            margin-bottom: 20px;
         }
         form {
             margin-top: 20px;
@@ -53,18 +85,49 @@
         }
         #response-container {
             margin-top: 30px;
-            width: 80%;
-            max-width: 600px;
+            width: 95%;
             background-color: #fff;
             border: 1px solid #ccc;
             border-radius: 5px;
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: calc(100% - 60px);
+            overflow-y: auto;
         }
         pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: auto;
             white-space: pre-wrap;
             word-wrap: break-word;
             color: #333;
+        }
+        code {
+            color: #d6336c;
+            font-family: Consolas, Monaco, 'Courier New', monospace;
+        }
+        #loading {
+            font-weight: bold;
+        }
+        #run-query {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        #run-query:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+        #run-query:hover:not(:disabled) {
+            background-color: #218838;
         }
     </style>
     <script>
@@ -76,22 +139,74 @@
                 // Show loading indicator when the form is submitted
                 loadingIndicator.style.display = "block";
             });
+
+            const responseContainer = document.getElementById("response-container");
+            const textArea = document.querySelector("textarea");
+            const runQueryButton = document.getElementById("run-query");
+
+            if (responseContainer) {
+                responseContainer.querySelectorAll("code").forEach((codeBlock) => {
+                    codeBlock.classList.add("code-block");
+                    codeBlock.addEventListener("click", () => {
+                        const responseText = codeBlock.innerText;
+                        textArea.value = responseText;
+                        runQueryButton.disabled = responseText.trim() === "";
+                    });
+                });
+            }
+
+            textArea.addEventListener("input", () => {
+                runQueryButton.disabled = textArea.value.trim() === "";
+            });
+
+            runQueryButton.addEventListener("click", (event) => {
+                event.preventDefault();
+                const query = textArea.value.trim();
+                if (query) {
+                    fetch("http://127.0.0.1:5000/query", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ query }),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Handle the response data
+                        console.log(data);
+                        alert(JSON.stringify(data, null, 2)); // Print out the response
+                    })
+                    .catch(error => {
+                        console.error("Error:", error);
+                    });
+                }
+            });
         });
     </script>
 </head>
 <body>
-    <h1>Search Page</h1>
-    <form method="post">
-        {% csrf_token %}
-        <input type="text" name="query" placeholder="Enter your search query" required>
-        <button type="submit">Search</button>
-    </form>
-    <div id="loading">Loading, please wait...</div>
-    {% if response %}
-        <div id="response-container">
-            <h2>Response:</h2>
-            <pre>{{ response|safe }}</pre>
+    <div class="container">
+        <div class="left">
+            <h1>Natural Language to SPARQL</h1>
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="query" placeholder="Enter your query" required>
+                <button type="submit">Search</button>
+            </form>
+            <div id="loading">Loading, please wait...</div>
+            {% if response %}
+                <div id="response-container">
+                    <h2>Response:</h2>
+                    <pre><code>{{ response.result.0}}</code></pre>
+                    <pre><code>{{ response.result.1}}</code></pre>
+                    <pre><code>{{ response.result.2}}</code></pre>
+                </div>
+            {% endif %}
         </div>
-    {% endif %}
+        <div class="right">
+            <textarea rows="10" cols="80" placeholder="Write your SPARQL query here, or select one of the queries above."></textarea>
+            <button id="run-query" disabled>Run Query</button>
+        </div>
+    </div>
 </body>
 </html>

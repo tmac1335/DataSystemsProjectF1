@@ -1,0 +1,139 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://test.org/dsp_groupf1/def#hasPart>
+  a owl:ObjectProperty;
+  rdfs:domain <https://test.org/dsp_groupf1/def#SP_Building_G_LightingSystem>;
+  rdfs:domain <https://test.org/dsp_groupf1/def#SP_Building_F_LightingSystem>;
+  rdfs:range <https://test.org/dsp_groupf1/def#Lightbulb>;
+  skos:prefLabel "has part"@en .
+
+  <https://test.org/dsp_groupf1/def#model>
+  a owl:DatatypeProperty;
+  rdfs:domain <https://test.org/dsp_groupf1/def#Lightbulb>;
+  rdfs:range xsd:string;
+  skos:prefLabel "model" .
+
+<https://test.org/dsp_groupf1/def#wattage>
+  a owl:DatatypeProperty;
+  rdfs:domain <https://test.org/dsp_groupf1/def#Lightbulb>;
+  rdfs:range xsd:decimal;
+  skos:prefLabel "wattage".
+
+<https://test.org/dsp_groupf1/def#Object> a owl:Class;
+  skos:prefLabel "Object"@en, "Object"@nl .
+
+<https://test.org/dsp_groupf1/def#SP904>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#Object>;
+  skos:prefLabel "Science Park 904 campus" .
+
+<https://test.org/dsp_groupf1/def#SP_Building_A>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP904>;
+  skos:prefLabel "Building A" .
+
+<https://test.org/dsp_groupf1/def#Floor1_A>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_A>;
+  skos:prefLabel "Building A first floor" .
+
+<https://test.org/dsp_groupf1/def#Floor2_A>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_A>;
+  skos:prefLabel "Building A second floor" .
+
+<https://test.org/dsp_groupf1/def#Floor3_A>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_A>;
+  skos:prefLabel "Building A third floor" .
+
+<https://test.org/dsp_groupf1/def#SP_Building_B>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP904>;
+  skos:prefLabel "Building B" .
+
+<https://test.org/dsp_groupf1/def#Floor1_B>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_B>;
+  skos:prefLabel "Building B first floor" .
+
+<https://test.org/dsp_groupf1/def#Floor2_B>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_B>;
+  skos:prefLabel "Building B second floor" .
+
+<https://test.org/dsp_groupf1/def#Floor3_B>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_B>;
+  skos:prefLabel "Building B third floor" .
+
+<https://test.org/dsp_groupf1/def#SP_Building_C>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP904>;
+  skos:prefLabel "Building C" .
+
+<https://test.org/dsp_groupf1/def#SP_Building_D>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP904>;
+  skos:prefLabel "Building D" .
+
+<https://test.org/dsp_groupf1/def#SP_Building_E>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP904>;
+  skos:prefLabel "Building E" .
+
+<https://test.org/dsp_groupf1/def#Floor1_E>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_E>;
+  skos:prefLabel "Building E first floor" .
+
+<https://test.org/dsp_groupf1/def#Floor2_E>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_E>;
+  skos:prefLabel "Building E second floor" .
+
+<https://test.org/dsp_groupf1/def#SP_Building_F>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP904>;
+  skos:prefLabel "Building F" .
+
+<https://test.org/dsp_groupf1/def#SP_Building_F_LightingSystem>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_F>;
+  <https://test.org/dsp_groupf1/def#hasPart> <https://test.org/dsp_groupf1/def#Lightbulb_building_F>;
+  skos:prefLabel "Lighting System of Building F" .
+
+<https://test.org/dsp_groupf1/def#Lightbulb_building_F>
+  a <https://test.org/dsp_groupf1/def#Lightbulb> ;
+  <https://test.org/dsp_groupf1/def#model> "IKEA NOT GOOD" ;
+  <https://test.org/dsp_groupf1/def#wattage> "12.5"^^xsd:decimal .
+
+<https://test.org/dsp_groupf1/def#Floor1_F>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_F>;
+  skos:prefLabel "Building F first floor" .
+
+<https://test.org/dsp_groupf1/def#Floor2_F>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_F>;
+  skos:prefLabel "Building F second floor" .
+
+<https://test.org/dsp_groupf1/def#SP_Building_G>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP904>;
+  skos:prefLabel "Building G" .
+
+<https://test.org/dsp_groupf1/def#SP_Building_G_LightingSystem>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_G>;
+  <https://test.org/dsp_groupf1/def#hasPart> <https://test.org/dsp_groupf1/def#Lightbulb_building_G>;
+  skos:prefLabel "Lighting System of Building G" .
+
+<https://test.org/dsp_groupf1/def#Lightbulb_building_G>
+  a <https://test.org/dsp_groupf1/def#Lightbulb> ;
+  <https://test.org/dsp_groupf1/def#model> "Phillips 123A" ;
+  <https://test.org/dsp_groupf1/def#wattage> "10.5"^^xsd:decimal .

@@ -1,0 +1,69 @@
+Classes:
+- <https://test.org/dsp_groupf1/def#SP_Building_A1_Doors> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_E_Floor2_LightingSystem> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_F1_Doors> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_G_Doors> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_E_Floor1_LightingSystem> (No label)
+- <https://test.org/dsp_groupf1/def#Floor1_B> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_F> (No label)
+- <https://test.org/dsp_groupf1/def#LightingSystemUnion> (No label)
+- <https://test.org/dsp_groupf1/def#SP904> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_A_Floor1_LightingSystem> (No label)
+- <https://test.org/dsp_groupf1/def#Floor1_F> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_E1_Doors> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_G> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_E> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_A_Floor2_LightingSystem> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_D_LightingSystem> (No label)
+- <https://test.org/dsp_groupf1/def#Floor2_B> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_B1_Doors> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_B_Floor3_LightingSystem> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_F_Floor2_LightingSystem> (No label)
+- <https://test.org/dsp_groupf1/def#DoorsUnion> (No label)
+- <https://test.org/dsp_groupf1/def#Floor1_A> (No label)
+- <https://test.org/dsp_groupf1/def#Floor3_B> (No label)
+- <https://test.org/dsp_groupf1/def#Floor1_E> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_B_Floor2_LightingSystem> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_F2_Doors> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_G_LightingSystem> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_C_LightingSystem> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_A2_Doors> (No label)
+- <https://test.org/dsp_groupf1/def#Floor2_F> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_A3_Doors> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_A> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_D_Doors> (No label)
+- <https://test.org/dsp_groupf1/def#Object> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_B> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_B_Floor1_LightingSystem> (No label)
+- <https://test.org/dsp_groupf1/def#Floor2_E> (No label)
+- <https://test.org/dsp_groupf1/def#Floor2_A> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_C_Doors> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_E2_Doors> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_B2_Doors> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_C> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_D> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_B3_Doors> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_F_Floor1_LightingSystem> (No label)
+- <https://test.org/dsp_groupf1/def#SP_Building_A_Floor3_LightingSystem> (No label)
+- <https://test.org/dsp_groupf1/def#Floor3_A> (No label)
+
+Object Properties:
+- <https://test.org/dsp_groupf1/def#hasDoor> (label: No label, domain: <https://test.org/dsp_groupf1/def#DoorsUnion>, range: <https://test.org/dsp_groupf1/def#Door>)
+- <https://test.org/dsp_groupf1/def#hasLightingPart> (label: No label, domain: <https://test.org/dsp_groupf1/def#LightingSystemUnion>, range: <https://test.org/dsp_groupf1/def#Lightbulb>)
+
+Datatype Properties:
+- <https://test.org/dsp_groupf1/def#wattage> (label: No label, domain: <https://test.org/dsp_groupf1/def#Lightbulb>, range: xsd:decimal)
+- <https://test.org/dsp_groupf1/def#model> (label: No label, domain: <https://test.org/dsp_groupf1/def#Lightbulb>, range: xsd:string)
+- <https://test.org/dsp_groupf1/def#DoorModel> (label: No label, domain: <https://test.org/dsp_groupf1/def#Door>, range: xsd:string)
+
+Example Triples:
+- <https://test.org/dsp_groupf1/def#SP_Building_B3_Doors> rdfs:subClassOf <https://test.org/dsp_groupf1/def#Floor3_B>.
+- <https://test.org/dsp_groupf1/def#SP_Building_C_LightingSystem> rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_C>.
+- <https://test.org/dsp_groupf1/def#Doors_G> rdf:type <https://test.org/dsp_groupf1/def#Door>.
+- _:nb91071b3f11047d7a6973b3e5198f9ffb16 rdf:first <https://test.org/dsp_groupf1/def#SP_Building_A3_Doors>.
+- <https://test.org/dsp_groupf1/def#SP_Building_E> skos:prefLabel "Building E".
+- <https://test.org/dsp_groupf1/def#SP_Building_B1_Doors> rdfs:subClassOf <https://test.org/dsp_groupf1/def#Floor1_B>.
+- <https://test.org/dsp_groupf1/def#SP_Building_B1_Doors> rdf:type owl:Class.
+- <https://test.org/dsp_groupf1/def#SP_Building_B2_Doors> <https://test.org/dsp_groupf1/def#hasDoor> <https://test.org/dsp_groupf1/def#Doors_B2>.
+- <https://test.org/dsp_groupf1/def#Lightbulb_building_B_Floor1> rdf:type <https://test.org/dsp_groupf1/def#Lightbulb>.
+- <https://test.org/dsp_groupf1/def#Doors_B1> rdf:type <https://test.org/dsp_groupf1/def#Door>.
