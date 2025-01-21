@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from baseline import construct_sparql_query
+from baseline import construct_sparql_query, construct_sparql_queries
 from pipeline import extract_ontology_description
 from rdflib.plugins.sparql import prepareQuery
 from rdflib import Graph
@@ -48,9 +48,8 @@ def query_api():
 
     data = request.json
     query = data.get('query', 0)
-    value = construct_sparql_query(query)
-    return jsonify({'result': value[9:-3]})
-
+    value = construct_sparql_queries(query)
+    return jsonify({'result': value})
 if __name__ == '__main__':
     app.run(port=5000)
 
