@@ -4,14 +4,13 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-<https://test.org/dsp_groupf1/def#hasPart>
+<https://test.org/dsp_groupf1/def#hasLightingPart>
   a owl:ObjectProperty;
-  rdfs:domain <https://test.org/dsp_groupf1/def#SP_Building_G_LightingSystem>;
-  rdfs:domain <https://test.org/dsp_groupf1/def#SP_Building_F_LightingSystem>;
+  rdfs:domain <https://test.org/dsp_groupf1/def#LightingSystemUnion>;
   rdfs:range <https://test.org/dsp_groupf1/def#Lightbulb>;
-  skos:prefLabel "has part"@en .
+  skos:prefLabel "has lighting part"@en .
 
-  <https://test.org/dsp_groupf1/def#model>
+<https://test.org/dsp_groupf1/def#model>
   a owl:DatatypeProperty;
   rdfs:domain <https://test.org/dsp_groupf1/def#Lightbulb>;
   rdfs:range xsd:string;
@@ -23,8 +22,20 @@
   rdfs:range xsd:decimal;
   skos:prefLabel "wattage".
 
+<https://test.org/dsp_groupf1/def#hasDoor>
+  a owl:ObjectProperty;
+  rdfs:domain <https://test.org/dsp_groupf1/def#DoorsUnion>;
+  rdfs:range <https://test.org/dsp_groupf1/def#Door>;
+  skos:prefLabel "has door, innit"@en .
+
+<https://test.org/dsp_groupf1/def#DoorModel>
+  a owl:DatatypeProperty;
+  rdfs:domain <https://test.org/dsp_groupf1/def#Door>;
+  rdfs:range xsd:string;
+  skos:prefLabel "model of the door" .
+
 <https://test.org/dsp_groupf1/def#Object> a owl:Class;
-  skos:prefLabel "Object"@en, "Object"@nl .
+  skos:prefLabel "Object"@en, "Object"@nl.
 
 <https://test.org/dsp_groupf1/def#SP904>
   a owl:Class;
@@ -51,6 +62,69 @@
   rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_A>;
   skos:prefLabel "Building A third floor" .
 
+<https://test.org/dsp_groupf1/def#SP_Building_A1_Doors>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#Floor1_A>;
+  <https://test.org/dsp_groupf1/def#hasDoor> <https://test.org/dsp_groupf1/def#Doors_A1>;
+  skos:prefLabel "Doors of Building A, floor 1" .
+
+<https://test.org/dsp_groupf1/def#Doors_A1>
+  a <https://test.org/dsp_groupf1/def#Door> ;
+  <https://test.org/dsp_groupf1/def#DoorModel> "Regular 2x1 wooden door for building A, floor 1" .
+
+<https://test.org/dsp_groupf1/def#SP_Building_A2_Doors>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#Floor2_A>;
+  <https://test.org/dsp_groupf1/def#hasDoor> <https://test.org/dsp_groupf1/def#Doors_A2>;
+  skos:prefLabel "Doors of Building A, floor 2" .
+
+<https://test.org/dsp_groupf1/def#Doors_A2>
+  a <https://test.org/dsp_groupf1/def#Door> ;
+  <https://test.org/dsp_groupf1/def#DoorModel> "Regular 2x1 wooden door for building A, floor 2" .
+
+<https://test.org/dsp_groupf1/def#SP_Building_A3_Doors>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#Floor3_A>;
+  <https://test.org/dsp_groupf1/def#hasDoor> <https://test.org/dsp_groupf1/def#Doors_A3>;
+  skos:prefLabel "Doors of Building A, floor 3" .
+
+<https://test.org/dsp_groupf1/def#Doors_A3>
+  a <https://test.org/dsp_groupf1/def#Door> ;
+  <https://test.org/dsp_groupf1/def#DoorModel> "Regular 2x1 wooden door for building A, floor 3" .
+
+<https://test.org/dsp_groupf1/def#SP_Building_A_Floor1_LightingSystem>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#Floor1_A>;
+  <https://test.org/dsp_groupf1/def#hasLightingPart> <https://test.org/dsp_groupf1/def#Lightbulb_building_A_Floor1>;
+  skos:prefLabel "Lighting System of Building A, floor 1" .
+
+<https://test.org/dsp_groupf1/def#Lightbulb_building_A_Floor1>
+  a <https://test.org/dsp_groupf1/def#Lightbulb> ;
+  <https://test.org/dsp_groupf1/def#model> "A_Floor 1 bulb model" ;
+  <https://test.org/dsp_groupf1/def#wattage> "15.0"^^xsd:decimal .
+
+<https://test.org/dsp_groupf1/def#SP_Building_A_Floor2_LightingSystem>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#Floor2_A>;
+  <https://test.org/dsp_groupf1/def#hasLightingPart> <https://test.org/dsp_groupf1/def#Lightbulb_building_A_Floor2>;
+  skos:prefLabel "Lighting System of Building A, floor 2" .
+
+<https://test.org/dsp_groupf1/def#Lightbulb_building_A_Floor2>
+  a <https://test.org/dsp_groupf1/def#Lightbulb> ;
+  <https://test.org/dsp_groupf1/def#model> "A_Floor 2 bulb model" ;
+  <https://test.org/dsp_groupf1/def#wattage> "20.0"^^xsd:decimal .
+
+<https://test.org/dsp_groupf1/def#SP_Building_A_Floor3_LightingSystem>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#Floor3_A>;
+  <https://test.org/dsp_groupf1/def#hasLightingPart> <https://test.org/dsp_groupf1/def#Lightbulb_building_A_Floor3>;
+  skos:prefLabel "Lighting System of Building A, floor 3" .
+
+<https://test.org/dsp_groupf1/def#Lightbulb_building_A_Floor3>
+  a <https://test.org/dsp_groupf1/def#Lightbulb> ;
+  <https://test.org/dsp_groupf1/def#model> "A_Floor 3 bulb model" ;
+  <https://test.org/dsp_groupf1/def#wattage> "20.0"^^xsd:decimal .
+
 <https://test.org/dsp_groupf1/def#SP_Building_B>
   a owl:Class;
   rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP904>;
@@ -71,15 +145,116 @@
   rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_B>;
   skos:prefLabel "Building B third floor" .
 
+<https://test.org/dsp_groupf1/def#SP_Building_B1_Doors>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#Floor1_B>;
+  <https://test.org/dsp_groupf1/def#hasDoor> <https://test.org/dsp_groupf1/def#Doors_B1>;
+  skos:prefLabel "Doors of Building B, floor 1" .
+
+<https://test.org/dsp_groupf1/def#Doors_B1>
+  a <https://test.org/dsp_groupf1/def#Door> ;
+  <https://test.org/dsp_groupf1/def#DoorModel> "Regular 2x2 wooden door for building B, floor 1" .
+
+<https://test.org/dsp_groupf1/def#SP_Building_B2_Doors>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#Floor2_B>;
+  <https://test.org/dsp_groupf1/def#hasDoor> <https://test.org/dsp_groupf1/def#Doors_B2>;
+  skos:prefLabel "Doors of Building B, floor 2" .
+
+<https://test.org/dsp_groupf1/def#Doors_B2>
+  a <https://test.org/dsp_groupf1/def#Door> ;
+  <https://test.org/dsp_groupf1/def#DoorModel> "Regular 2x2 wooden door for building 2, floor 2" .
+
+<https://test.org/dsp_groupf1/def#SP_Building_B3_Doors>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#Floor3_B>;
+  <https://test.org/dsp_groupf1/def#hasDoor> <https://test.org/dsp_groupf1/def#Doors_B3>;
+  skos:prefLabel "Doors of Building B, floor 3" .
+
+<https://test.org/dsp_groupf1/def#SP_Building_B_Floor1_LightingSystem>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#Floor1_B>;
+  <https://test.org/dsp_groupf1/def#hasLightingPart> <https://test.org/dsp_groupf1/def#Lightbulb_building_B_Floor1>;
+  skos:prefLabel "Lighting System of Building B, floor 1" .
+
+<https://test.org/dsp_groupf1/def#Lightbulb_building_B_Floor1>
+  a <https://test.org/dsp_groupf1/def#Lightbulb> ;
+  <https://test.org/dsp_groupf1/def#model> "B_Floor 1 bulb model" ;
+  <https://test.org/dsp_groupf1/def#wattage> "15.0"^^xsd:decimal .
+
+<https://test.org/dsp_groupf1/def#SP_Building_B_Floor2_LightingSystem>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#Floor2_B>;
+  <https://test.org/dsp_groupf1/def#hasLightingPart> <https://test.org/dsp_groupf1/def#Lightbulb_building_B_Floor2>;
+  skos:prefLabel "Lighting System of Building B, floor 2" .
+
+<https://test.org/dsp_groupf1/def#Lightbulb_building_B_Floor2>
+  a <https://test.org/dsp_groupf1/def#Lightbulb> ;
+  <https://test.org/dsp_groupf1/def#model> "B_Floor 2 bulb model" ;
+  <https://test.org/dsp_groupf1/def#wattage> "20.0"^^xsd:decimal .
+
+  <https://test.org/dsp_groupf1/def#SP_Building_B_Floor3_LightingSystem>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#Floor3_B>;
+  <https://test.org/dsp_groupf1/def#hasLightingPart> <https://test.org/dsp_groupf1/def#Lightbulb_building_B_Floor3>;
+  skos:prefLabel "Lighting System of Building B, floor 3" .
+
+<https://test.org/dsp_groupf1/def#Lightbulb_building_B_Floor3>
+  a <https://test.org/dsp_groupf1/def#Lightbulb> ;
+  <https://test.org/dsp_groupf1/def#model> "B_Floor 3 bulb model" ;
+  <https://test.org/dsp_groupf1/def#wattage> "20.0"^^xsd:decimal .
+
 <https://test.org/dsp_groupf1/def#SP_Building_C>
   a owl:Class;
   rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP904>;
   skos:prefLabel "Building C" .
 
+<https://test.org/dsp_groupf1/def#SP_Building_C_Doors>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_C>;
+  <https://test.org/dsp_groupf1/def#hasDoor> <https://test.org/dsp_groupf1/def#Doors_C>;
+  skos:prefLabel "Doors of Building C" .
+
+<https://test.org/dsp_groupf1/def#Doors_C>
+  a <https://test.org/dsp_groupf1/def#Door> ;
+  <https://test.org/dsp_groupf1/def#DoorModel> "Regular 2x2 wooden door for building C" .
+
+<https://test.org/dsp_groupf1/def#SP_Building_C_LightingSystem>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_C>;
+  <https://test.org/dsp_groupf1/def#hasLightingPart> <https://test.org/dsp_groupf1/def#Lightbulb_building_C>;
+  skos:prefLabel "Lighting System of Building C" .
+
+<https://test.org/dsp_groupf1/def#Lightbulb_building_C>
+  a <https://test.org/dsp_groupf1/def#Lightbulb> ;
+  <https://test.org/dsp_groupf1/def#model> "C bulb model" ;
+  <https://test.org/dsp_groupf1/def#wattage> "99.0"^^xsd:decimal .
+
 <https://test.org/dsp_groupf1/def#SP_Building_D>
   a owl:Class;
   rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP904>;
   skos:prefLabel "Building D" .
+
+<https://test.org/dsp_groupf1/def#SP_Building_D_Doors>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_D>;
+  <https://test.org/dsp_groupf1/def#hasDoor> <https://test.org/dsp_groupf1/def#Doors_D>;
+  skos:prefLabel "Doors of Building D" .
+
+<https://test.org/dsp_groupf1/def#Doors_D>
+  a <https://test.org/dsp_groupf1/def#Door> ;
+  <https://test.org/dsp_groupf1/def#DoorModel> "Some special building D door model" .
+
+<https://test.org/dsp_groupf1/def#SP_Building_D_LightingSystem>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_D>;
+  <https://test.org/dsp_groupf1/def#hasLightingPart> <https://test.org/dsp_groupf1/def#Lightbulb_building_D>;
+  skos:prefLabel "Lighting System of Building F, floor 1" .
+
+<https://test.org/dsp_groupf1/def#Lightbulb_building_D>
+  a <https://test.org/dsp_groupf1/def#Lightbulb> ;
+  <https://test.org/dsp_groupf1/def#model> "D bulb model" ;
+  <https://test.org/dsp_groupf1/def#wattage> "95.0"^^xsd:decimal .
 
 <https://test.org/dsp_groupf1/def#SP_Building_E>
   a owl:Class;
@@ -96,21 +271,52 @@
   rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_E>;
   skos:prefLabel "Building E second floor" .
 
+<https://test.org/dsp_groupf1/def#SP_Building_E1_Doors>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#Floor1_E>;
+  <https://test.org/dsp_groupf1/def#hasDoor> <https://test.org/dsp_groupf1/def#Doors_E1>;
+  skos:prefLabel "Doors of Building E, floor 1" .
+
+<https://test.org/dsp_groupf1/def#Doors_E1>
+  a <https://test.org/dsp_groupf1/def#Door> ;
+  <https://test.org/dsp_groupf1/def#DoorModel> "Regular 3.2x2 wooden door for building E, floor 1" .
+
+<https://test.org/dsp_groupf1/def#SP_Building_E2_Doors>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#Floor2_E>;
+  <https://test.org/dsp_groupf1/def#hasDoor> <https://test.org/dsp_groupf1/def#Doors_E2>;
+  skos:prefLabel "Doors of Building E, floor 2" .
+
+<https://test.org/dsp_groupf1/def#Doors_E2>
+  a <https://test.org/dsp_groupf1/def#Door> ;
+  <https://test.org/dsp_groupf1/def#DoorModel> "IKEA building E2 door model" .
+
+<https://test.org/dsp_groupf1/def#SP_Building_E_Floor1_LightingSystem>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#Floor1_E>;
+  <https://test.org/dsp_groupf1/def#hasLightingPart> <https://test.org/dsp_groupf1/def#Lightbulb_building_E_Floor1>;
+  skos:prefLabel "Lighting System of Building F, floor 1" .
+
+<https://test.org/dsp_groupf1/def#Lightbulb_building_E_Floor1>
+  a <https://test.org/dsp_groupf1/def#Lightbulb> ;
+  <https://test.org/dsp_groupf1/def#model> "E_Floor 1 bulb model" ;
+  <https://test.org/dsp_groupf1/def#wattage> "15.0"^^xsd:decimal .
+
+<https://test.org/dsp_groupf1/def#SP_Building_E_Floor2_LightingSystem>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#Floor2_E>;
+  <https://test.org/dsp_groupf1/def#hasLightingPart> <https://test.org/dsp_groupf1/def#Lightbulb_building_E_Floor2>;
+  skos:prefLabel "Lighting System of Building E, floor 2" .
+
+<https://test.org/dsp_groupf1/def#Lightbulb_building_E_Floor2>
+  a <https://test.org/dsp_groupf1/def#Lightbulb> ;
+  <https://test.org/dsp_groupf1/def#model> "E_Floor 2 bulb model" ;
+  <https://test.org/dsp_groupf1/def#wattage> "40.0"^^xsd:decimal .
+
 <https://test.org/dsp_groupf1/def#SP_Building_F>
   a owl:Class;
   rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP904>;
   skos:prefLabel "Building F" .
-
-<https://test.org/dsp_groupf1/def#SP_Building_F_LightingSystem>
-  a owl:Class;
-  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_F>;
-  <https://test.org/dsp_groupf1/def#hasPart> <https://test.org/dsp_groupf1/def#Lightbulb_building_F>;
-  skos:prefLabel "Lighting System of Building F" .
-
-<https://test.org/dsp_groupf1/def#Lightbulb_building_F>
-  a <https://test.org/dsp_groupf1/def#Lightbulb> ;
-  <https://test.org/dsp_groupf1/def#model> "IKEA NOT GOOD" ;
-  <https://test.org/dsp_groupf1/def#wattage> "12.5"^^xsd:decimal .
 
 <https://test.org/dsp_groupf1/def#Floor1_F>
   a owl:Class;
@@ -122,18 +328,106 @@
   rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_F>;
   skos:prefLabel "Building F second floor" .
 
+<https://test.org/dsp_groupf1/def#SP_Building_F1_Doors>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#Floor1_F>;
+  <https://test.org/dsp_groupf1/def#hasDoor> <https://test.org/dsp_groupf1/def#Doors_F1>;
+  skos:prefLabel "Doors of Building F, floor 1" .
+
+<https://test.org/dsp_groupf1/def#Doors_F1>
+  a <https://test.org/dsp_groupf1/def#Door> ;
+  <https://test.org/dsp_groupf1/def#DoorModel> "Special metal door for building F, floor 1" .
+
+<https://test.org/dsp_groupf1/def#SP_Building_F2_Doors>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#Floor2_F>;
+  <https://test.org/dsp_groupf1/def#hasDoor> <https://test.org/dsp_groupf1/def#Doors_F2>;
+  skos:prefLabel "Doors of Building F, floor 2" .
+
+<https://test.org/dsp_groupf1/def#Doors_F2>
+  a <https://test.org/dsp_groupf1/def#Door> ;
+  <https://test.org/dsp_groupf1/def#DoorModel> "Bruynzeel building F2 door model" .
+
+<https://test.org/dsp_groupf1/def#SP_Building_F_Floor1_LightingSystem>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#Floor1_F>;
+  <https://test.org/dsp_groupf1/def#hasLightingPart> <https://test.org/dsp_groupf1/def#Lightbulb_building_F_Floor1>;
+  skos:prefLabel "Lighting System of Building F, floor 1" .
+
+<https://test.org/dsp_groupf1/def#Lightbulb_building_F_Floor1>
+  a <https://test.org/dsp_groupf1/def#Lightbulb> ;
+  <https://test.org/dsp_groupf1/def#model> "F_Floor 1 bulb model" ;
+  <https://test.org/dsp_groupf1/def#wattage> "15.0"^^xsd:decimal .
+
+<https://test.org/dsp_groupf1/def#SP_Building_F_Floor2_LightingSystem>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#Floor2_F>;
+  <https://test.org/dsp_groupf1/def#hasLightingPart> <https://test.org/dsp_groupf1/def#Lightbulb_building_F_Floor2>;
+  skos:prefLabel "Lighting System of Building F, floor 2" .
+
+<https://test.org/dsp_groupf1/def#Lightbulb_building_F_Floor2>
+  a <https://test.org/dsp_groupf1/def#Lightbulb> ;
+  <https://test.org/dsp_groupf1/def#model> "F_Floor 2 bulb model" ;
+  <https://test.org/dsp_groupf1/def#wattage> "20.0"^^xsd:decimal .
+
 <https://test.org/dsp_groupf1/def#SP_Building_G>
   a owl:Class;
   rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP904>;
   skos:prefLabel "Building G" .
 
+<https://test.org/dsp_groupf1/def#SP_Building_G_Doors>
+  a owl:Class;
+  rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_G>;
+  <https://test.org/dsp_groupf1/def#hasDoor> <https://test.org/dsp_groupf1/def#Doors_G>;
+  skos:prefLabel "Doors of Building G" .
+
+<https://test.org/dsp_groupf1/def#Doors_G>
+  a <https://test.org/dsp_groupf1/def#Door> ;
+  <https://test.org/dsp_groupf1/def#DoorModel> "Bruynzeel building G door model" .
+
 <https://test.org/dsp_groupf1/def#SP_Building_G_LightingSystem>
   a owl:Class;
   rdfs:subClassOf <https://test.org/dsp_groupf1/def#SP_Building_G>;
-  <https://test.org/dsp_groupf1/def#hasPart> <https://test.org/dsp_groupf1/def#Lightbulb_building_G>;
+  <https://test.org/dsp_groupf1/def#hasLightingPart> <https://test.org/dsp_groupf1/def#Lightbulb_building_G>;
   skos:prefLabel "Lighting System of Building G" .
 
 <https://test.org/dsp_groupf1/def#Lightbulb_building_G>
   a <https://test.org/dsp_groupf1/def#Lightbulb> ;
   <https://test.org/dsp_groupf1/def#model> "Phillips 123A" ;
   <https://test.org/dsp_groupf1/def#wattage> "10.5"^^xsd:decimal .
+
+<https://test.org/dsp_groupf1/def#LightingSystemUnion> 
+  a owl:Class;
+  owl:unionOf (
+    <https://test.org/dsp_groupf1/def#SP_Building_G_LightingSystem>
+    <https://test.org/dsp_groupf1/def#SP_Building_F_Floor1_LightingSystem>
+    <https://test.org/dsp_groupf1/def#SP_Building_F_Floor2_LightingSystem>
+    <https://test.org/dsp_groupf1/def#SP_Building_E_Floor1_LightingSystem>
+    <https://test.org/dsp_groupf1/def#SP_Building_E_Floor2_LightingSystem>
+    <https://test.org/dsp_groupf1/def#SP_Building_D_LightingSystem>
+    <https://test.org/dsp_groupf1/def#SP_Building_C_LightingSystem>
+    <https://test.org/dsp_groupf1/def#SP_Building_B_Floor1_LightingSystem>
+    <https://test.org/dsp_groupf1/def#SP_Building_B_Floor2_LightingSystem>
+    <https://test.org/dsp_groupf1/def#SP_Building_B_Floor3_LightingSystem>
+    <https://test.org/dsp_groupf1/def#SP_Building_A_Floor1_LightingSystem>
+    <https://test.org/dsp_groupf1/def#SP_Building_A_Floor2_LightingSystem>
+    <https://test.org/dsp_groupf1/def#SP_Building_A_Floor3_LightingSystem>
+  ) .
+
+  <https://test.org/dsp_groupf1/def#DoorsUnion> 
+  a owl:Class;
+  owl:unionOf (
+    <https://test.org/dsp_groupf1/def#SP_Building_A1_Doors>
+    <https://test.org/dsp_groupf1/def#SP_Building_A2_Doors>
+    <https://test.org/dsp_groupf1/def#SP_Building_A3_Doors>
+    <https://test.org/dsp_groupf1/def#SP_Building_B1_Doors>
+    <https://test.org/dsp_groupf1/def#SP_Building_B2_Doors>
+    <https://test.org/dsp_groupf1/def#SP_Building_B3_Doors>
+    <https://test.org/dsp_groupf1/def#SP_Building_C_Doors>
+    <https://test.org/dsp_groupf1/def#SP_Building_D_Doors>
+    <https://test.org/dsp_groupf1/def#SP_Building_E1_Doors>
+    <https://test.org/dsp_groupf1/def#SP_Building_E2_Doors>
+    <https://test.org/dsp_groupf1/def#SP_Building_F1_Doors>
+    <https://test.org/dsp_groupf1/def#SP_Building_F2_Doors>
+    <https://test.org/dsp_groupf1/def#SP_Building_G_Doors>
+  ) .
