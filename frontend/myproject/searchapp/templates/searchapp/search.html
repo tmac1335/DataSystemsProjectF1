@@ -174,13 +174,72 @@
                     .then(data => {
                         // Handle the response data
                         console.log(data);
-                        alert(JSON.stringify(data, null, 2)); // Print out the response
+                        const responseWindow = window.open("", "Response", "width=600,height=400");
+                        responseWindow.document.write(`
+                            <html>
+                            <head>
+                                <title>Query Results</title>
+                                <style>
+                                    body {
+                                        font-family: Arial, sans-serif;
+                                        background-color: #f9f9f9;
+                                        margin: 0;
+                                        padding: 20px;
+                                    }
+                                    h1 {
+                                        color: #333;
+                                        text-align: center;
+                                    }
+                                    p {
+                                        font-size: 16px;
+                                        color: #333;
+                                    }
+                                    button {
+                                        background-color: #007bff;
+                                        color: white;
+                                        padding: 10px 20px;
+                                        border: none;
+                                        border-radius: 4px;
+                                        cursor: pointer;
+                                        font-size: 16px;
+                                        display: block;
+                                        margin: 20px auto;
+                                    }
+                                    button:hover {
+                                        background-color: #0056b3;
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                <h1>Query Results</h1>
+                                ${data.error ? `<p>Error: ${data.error}. Please try another query or fix the current one.</p>` : data.map(item => Object.entries(item).map(([key, value]) => `<p><strong>${key}:</strong> ${value}</p>`).join('')).join('')}
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"><\/script>
+                                <button id="download-pdf">Download as PDF</button>
+                                <script>
+                                    document.getElementById('download-pdf').addEventListener('click', () => {
+                                        const { jsPDF } = window.jspdf;
+                                        const doc = new jsPDF();
+                                        let y = 20;
+                                        data.forEach(item => {
+                                            Object.entries(item).forEach(([key, value]) => {
+                                                doc.text(20, y, \`\${key}: \${value}\`);
+                                                y += 10;
+                                            });
+                                            y += 10;
+                                        });
+                                        doc.save('query_results.pdf');
+                                    });
+                                <\/script>
+                            </body>
+                            </html>
+                        `);
                     })
                     .catch(error => {
                         console.error("Error:", error);
                     });
                 }
             });
+
         });
     </script>
 </head>
@@ -204,7 +263,7 @@
             {% endif %}
         </div>
         <div class="right">
-            <textarea rows="10" cols="80" placeholder="Write your SPARQL query here, or select one of the queries above."></textarea>
+            <textarea rows="10" cols="80" placeholder="Write your SPARQL query here, or select one of the suggested queries."></textarea>
             <button id="run-query" disabled>Run Query</button>
         </div>
     </div>
