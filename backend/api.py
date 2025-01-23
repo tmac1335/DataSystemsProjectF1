@@ -38,7 +38,10 @@ def query_db():
         for row in results:
             result_list.append({str(var): str(value) for var, value in row.asdict().items()})
 
-        return jsonify({'result': result_list}), 200
+        if len(result_list) == 0:
+            return jsonify({"error": "No results found"}), 500
+        
+        return result_list, 200
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500

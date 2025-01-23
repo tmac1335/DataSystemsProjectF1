@@ -3,7 +3,6 @@ import os
 from difflib import get_close_matches
 import json
 import re
-from data import ENTITY_TYPES, RELATIONSHIP_TYPES
 
 api_key = os.getenv('OPENAI_API_KEY')
 organisation = os.getenv('ORGANISATION')
@@ -67,7 +66,7 @@ def construct_sparql_queries(user_query):
         messages=[
             {"role": "user", "content": prompt}
         ],
-        n=4
+        n=3
     )
 
     choice_list = [choice.message.content[9:-3] for choice in response.choices]
