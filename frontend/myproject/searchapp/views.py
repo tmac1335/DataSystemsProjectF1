@@ -16,3 +16,6 @@ def search_view(request):
                 response_data = {"error": str(e)}  # Handle any request errors
 
     return render(request, 'searchapp/search.html', {"response": response_data})
+
+def login(request):
+    return render(request, 'searchapp/login.html')
